@@ -81,7 +81,7 @@ if (addModule) {
 
 // SimpleMDE
 // ==================
-var InputDescription = new SimpleMDE({
+new SimpleMDE({
     element: document.getElementById('InputContent'),
 });
 
@@ -103,10 +103,11 @@ settingsCategoriesListSort;
 // Toggle service edit
 // ==================
 var plannerServEditDone = document.getElementById('planner-service-edit-done');
-plannerServEditDone.addEventListener('click', function() {
-    document.getElementById('viewPrayer').classList.remove('active');
-});
-
+if (plannerServEditDone) {
+    plannerServEditDone.addEventListener('click', function() {
+        document.getElementById('viewPrayer').classList.remove('active');
+    });
+}
 
 // Toggle Service Edit Add New
 // ==================
@@ -114,12 +115,16 @@ var serviceEditAddNewButton = document.getElementById('service-edit-addnew');
 var serviceEditEditCard = document.getElementById('service-edit-edit');
 var serviceEditNewCancel = document.getElementById('service-edit-new-cancel');
 
-serviceEditAddNewButton.addEventListener('click', function() {
-    serviceEditEditCard.classList.add('edit-add-new');
-});
-serviceEditNewCancel.addEventListener('click', function() {
-    serviceEditEditCard.classList.remove('edit-add-new');
-});
+if (serviceEditAddNewButton) {
+    serviceEditAddNewButton.addEventListener('click', function() {
+        serviceEditEditCard.classList.add('edit-add-new');
+    });
+}
+if (serviceEditNewCancel) {
+    serviceEditNewCancel.addEventListener('click', function() {
+        serviceEditEditCard.classList.remove('edit-add-new');
+    });
+}
 
 // Toggle plan-edit-nav
 // ==================
@@ -129,22 +134,30 @@ var planEditEdit = document.getElementById('service-edit-edit');
 var planEditServiceBtn = document.getElementById('plan-edit-nav-service');
 var planEditTogCate = document.getElementById('service-edit-toggle-categories');
 var planEditCategories = document.getElementById('service-edit-categories');
-planEditServiceBtn.addEventListener('click', function() {
-    planEditService.classList.add('active');
-    planEditServiceBtn.classList.add('active');
-    planEditEdit.classList.remove('active');
-    planEditElementsBtn.classList.remove('active');
-});
-planEditElementsBtn.addEventListener('click', function() {
-    planEditService.classList.remove('active');
-    planEditServiceBtn.classList.remove('active');
-    planEditEdit.classList.add('active');
-    planEditElementsBtn.classList.add('active');
-});
-planEditTogCate.addEventListener('click', function() {
-    planEditCategories.classList.toggle('active');
-    planEditTogCate.classList.toggle('active');
-});
+if (planEditServiceBtn) {
+    planEditServiceBtn.addEventListener('click', function() {
+        planEditService.classList.add('active');
+        planEditServiceBtn.classList.add('active');
+        planEditEdit.classList.remove('active');
+        planEditElementsBtn.classList.remove('active');
+    });
+}
+if (planEditElementsBtn) {
+    planEditElementsBtn.addEventListener('click', function() {
+        planEditService.classList.remove('active');
+        planEditServiceBtn.classList.remove('active');
+        planEditEdit.classList.add('active');
+        planEditElementsBtn.classList.add('active');
+    });
+}
+
+if (planEditTogCate) {
+    planEditTogCate.addEventListener('click', function() {
+        planEditCategories.classList.toggle('active');
+        planEditTogCate.classList.toggle('active');
+    });
+}
+
 
 // Toggle plan-edit-contributor
 // ==================
@@ -152,5 +165,4 @@ $('.planner-services-item .button-contributor').on('click', function(button) {
     $(this).parents( '.planner-services-item')
         .find('.dropdown').toggleClass('active');
 });
-
 
