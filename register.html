@@ -1,0 +1,79 @@
+---
+layout: login
+body-class: login
+title: "Register"
+header: login
+---
+<div class="card">
+	<h1>{{page.title}}</h1>
+	<form action="" class="form">
+		<div>
+			<label for="">Church Name</label>
+			<input type="text">
+		</div>
+		
+		<div>
+			<label for="">Church Slug</label>
+			<input type="text">
+			<p>This slug is used to identify your church in URLs. It has to be unique and cannot contain any spaces.</p>
+		</div>
+		
+		<div>
+			<label for="">Your Name</label>
+			<input type="text">
+		</div>
+		
+		<div>
+			<label for="">E-Mail Address</label>
+			<input type="email">
+		</div>
+
+		<div>
+			<label for="">Password</label>
+			<input type="password">
+		</div>
+		
+		<div>
+			<label for="">Confirm Password</label>
+			<input type="password">
+		</div>
+
+		<fieldset>
+			<legend>Church Details:</legend>
+
+			<div>
+				<label for="">Church Wide Password</label>
+				<input type="password">
+				<p>This password will be used for pages (like your public prayer request page) that you want to share with your church family but not the outside world.</p>
+			</div>
+			
+			<div>
+				<label for="">Church Address</label>
+				<input type="text">
+			</div>
+			
+			<div>
+				<label for="">Church Phone</label>
+				<input type="tel">
+			</div>
+			
+			<div>
+				<label for="">Church E-Mail Address</label>
+				<input type="email">
+			</div>
+			<div>
+				<label for="">Church Website URL</label>
+				<input type="url">
+			</div>
+		</fieldset>
+
+		<div class="checkbox">
+			<input type="checkbox">
+			<label for="">I Accept <a href="#">The Terms Of Service</a></label>
+		</div>
+
+		<div class="buttons">
+			<button>Register</button>
+		</div>
+	</form>
+</div>

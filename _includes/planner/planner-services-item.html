@@ -1,0 +1,31 @@
+<li class="planner-services-item ">
+	<div class="card">
+		<button class="fa fa-times"></button>
+		<img src="{{site.baserur}}/assets/images/other-icon.svg" alt="">
+		<p>
+			<strong>Beneath the Cross of Jesus</strong>
+			{% if include.contributor %}
+			<span class="contributor">Harold Janssen</span>
+			{% endif %}
+		</p>
+		<button class="button-contributor">
+			{% if include.contributor %}
+				<img src="{{site.baserurl}}/assets/images/contributor-icon-green.svg" alt="">
+			{% else %}
+				<img src="{{site.baserurl}}/assets/images/contributor-icon-add.svg" alt="">
+			{% endif %}
+		</button>
+		<span class="button-drag"></span>
+	</div>
+	<div class="dropdown"> {% comment %}Add ".active" to toggle{% endcomment %}
+		<label for="">Contributor:</label>
+		<input type="text">
+		<ul class="autocomplete">
+			<li>Lorem ipsum</li>
+			<li>Lorem ipsum</li>
+			<li>Lorem ipsum</li>
+		</ul>
+		<button class="button-gray">Cancel</button>
+		<button>Save</button>
+	</div>
+</li>

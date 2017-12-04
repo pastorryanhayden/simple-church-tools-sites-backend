@@ -1,0 +1,113 @@
+---
+layout: default
+body-class: "prayers-settings settings"
+title: "Prayer Settings"
+header: simple
+---
+{% comment %} 
+	Documentation:
+{% endcomment %}
+<div class="card-secundary categories">
+	<h2>Categories</h2>
+	<div class="wrapper">
+		<p>
+			Choose the categories you would like to show on the prayer list and drag and drop them to set the order they show on the handout.
+		</p>
+		<div class="form">
+			<div>
+				<input type="text">
+				<button>Add</button>
+			</div>
+			<ul id="settings-categories">
+				<li>
+					<p>Missionaries</p>
+					<div class="actions">
+						<button class="delete">
+							<img src="{{site.baseurl}}/assets/images/trashcan.svg"  alt="">
+						</button>
+						<span class="drag">
+							<img src="{{site.baseurl}}/assets/images/arrow-up-down.svg" alt="">
+						</span>
+					</div>
+				</li>
+				<li>
+					<p>Health Needs</p>
+					<div class="actions">
+						<button class="delete">
+							<img src="{{site.baseurl}}/assets/images/trashcan.svg"  alt="">
+						</button>
+						<span class="drag">
+							<img src="{{site.baseurl}}/assets/images/arrow-up-down.svg" alt="">
+						</span>
+					</div>
+				</li>
+				<li>
+					<p>Spiritual/Salvation</p>
+					<div class="actions">
+						<button class="delete">
+							<img src="{{site.baseurl}}/assets/images/trashcan.svg"  alt="">
+						</button>
+						<span class="drag">
+							<img src="{{site.baseurl}}/assets/images/arrow-up-down.svg" alt="">
+						</span>
+					</div>
+				</li>
+				<li>
+					<p>Other</p>
+					<div class="actions">
+						<button class="delete">
+							<img src="{{site.baseurl}}/assets/images/trashcan.svg"  alt="">
+						</button>
+						<span class="drag">
+							<img src="{{site.baseurl}}/assets/images/arrow-up-down.svg" alt="">
+						</span>
+					</div>
+				</li>
+			</ul>
+		</div> <!-- /.form -->
+	</div> <!-- /.wrapper -->
+</div> <!-- /.card-secundary.categories-->
+
+<div class="card-secundary archive">
+	<h2>Archive</h2>
+	<div class="wrapper">
+		<p>The number of days before active prayer requests are automatically moved to the archive list.</p>
+		<input type="number" placeholder="30">
+	</div> <!-- /.wrapper -->
+</div> <!-- /.card-secundary.archive -->
+
+<div class="card-secundary handout">
+	<h2>Handout Style</h2>
+	<div class="wrapper">
+		<p>The number of days before active prayer requests are automatically moved to the archive list.</p>
+
+		<div class="form">
+			<div>
+				<input type="radio" name="hadout-style" id="handout-halfletter">
+				<label for="handout-halfletter">
+					<img src="{{site.baserurl}}/assets/images/handout-halfletter.svg" alt="">
+					<span>Half-letter</span>
+				</label>
+			</div>
+			<div>
+				<input type="radio" name="hadout-style" id="handout-letter">
+				<label for="handout-letter">
+					<img src="{{site.baserurl}}/assets/images/handout-letter.svg" alt="">
+					<span>Letter</span>
+				</label>
+			</div>
+			<div>
+				<input type="radio" name="hadout-style" id="handout-booklet">
+				<label for="handout-booklet">
+					<img src="{{site.baserurl}}/assets/images/handout-booklet.svg" alt="">
+					<span>Booklet</span>
+				</label>
+			</div>
+		</div> <!-- /.form -->
+	</div> <!-- /.wrapper -->
+</div> <!-- /.card-secundary.archive -->
+
+<div class="buttons">
+	<button class="button-orange">Discard Changes</button>
+	<button class="button-green">Save Changes</button>
+</div>

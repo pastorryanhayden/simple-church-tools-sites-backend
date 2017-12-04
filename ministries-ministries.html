@@ -1,0 +1,88 @@
+---
+layout: default
+body-class: home
+title: "Ministries"
+filters:
+#- All 
+addOption: "Add Ministry"
+handout: false
+---
+<div class="card-main">
+	
+	<div class="input-search">
+		<input class="search" type="search" placeholder="Search">
+	</div>
+	
+	<table class="maintable-list">
+
+		<!-- maintable-item -->
+		{% for item in (1..5) %}
+		<tr class="active">
+			<!-- <td class="checkbox">
+				<input type="checkbox">
+			</td> -->
+			<td class="title">
+				<a href="#">Sunday School</a>
+				<!-- <span>Health Needs</span> -->
+			</td>
+			<td>
+				<span>Description:</span>
+				The descriptions Lorem ipsum dolor sit.…
+			</td>
+			<td>
+				<span>Leader:</span>
+				Pastor
+			</td>
+			<td class="actions">
+				<div class="desktop">
+					<a href="#"><i class="fa fa-archive"></i></a>
+					<a href="#"><i class="fa fa-pencil"></i></a>
+				</div>
+				<div class="mobile">
+					<button class="button-orange">Archive</button>
+					<button class="button-green">View</button>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+		<!-- /maintable-item -->
+		
+	</table>
+	
+	<!-- {% include pagination.html %} -->
+
+</div> <!-- /.card-main -->
+
+<section class="addModule" id="addModule">
+	<div class="shadow" id="addModuleOverlay"></div>
+	<div class="content"id="addModuleContent">
+		<h2>Add A Ministry</h2>
+		<form action="">
+			<div class="">
+				<label for="">Title:</label>
+				<input type="text" value="Awana">
+			</div>
+			<div>
+				<label for="">Description:</label>
+				<input type="text" value="">
+			</div>
+			<div>
+				<label for="">Leader:</label>
+				<input type="text" value="Pastor">
+			</div>
+			<div>
+				<label for="">Photo:</label>
+				<input type="file">
+			</div>
+			<div>
+				<label for="">Content::</label>
+				<textarea name="" id="InputContent" cols="30" rows="10"></textarea>
+			</div>
+
+			<div class="controllers">
+				<button class="button-archive">Archive</button>
+				<button>Done</button>
+			</div>
+		</form>
+	</div>
+</section>

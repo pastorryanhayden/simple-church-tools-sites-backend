@@ -1,0 +1,489 @@
+.planner-service-edit{
+	.wrapper{
+		@include max-mobile{
+			padding: 0;
+		}
+	}
+	.close-planner-edit{
+		position: absolute;
+		right: 1rem;
+		background: transparent;
+		color: $dark;
+		font-size: 2rem;
+		@include  tablet{
+			right: 3rem;
+		}
+	}
+	.shadow{
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s, opacity 0.5s linear;
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		background-color: rgba($dark-dark, 0.5);
+	}//.shadow
+	.content{
+		position: fixed;
+		height: 100vh;
+		width: 100%;
+		padding: 0 $wrapper-padding 2rem;
+		overflow-y: scroll;
+		top: 0;
+		right: 0;
+		left: 100vw;
+		left: calc(100vw - 0.5rem);
+		background-color: $gray;
+		border-left: 0.5rem solid $dark-blue;
+		transition: left 0.5s ease, right 0.5s ease;
+		cursor: pointer;
+		&:hover{
+			left: 95vw;
+		}
+		@include max-tablet{
+			width: 100vw;
+		}
+	}//.content
+	&.active{
+		.shadow{
+			visibility: visible;
+			opacity: 1;
+		}
+		.content{
+			cursor: initial;
+			left: 0;
+			@include max-tablet{
+				left: 0vw;
+			}
+		}	
+	}//&.active
+	.form{
+		> div{
+			display: inline-block;
+		}
+		input,
+		select{
+			width: 15rem;
+			height: 2.5rem;
+			padding: 0.5rem;
+			line-height: 1em;
+			font-size: 1rem;
+			box-sizing: border-box;
+		}
+		> .controllers{
+			display: block;
+			text-align: center;
+			pointer-events: initial;
+			button{
+				min-width: 10em;
+			}
+		}
+	}//form
+	.plan-edit{
+		display: block;
+		// min-width: 1100px;
+		width: 100%;
+		p{
+			max-width: 40em;
+		}
+		.container{
+			position: relative;
+			margin: 3rem 0;
+			display: flex;
+			height: 90vh;
+			> div{
+				@include max-mobile{
+					height: calc(100% - 2.5rem);
+				}
+			}
+			flex-wrap: wrap;
+			@include tablet{
+				flex-wrap: nowrap;
+				height: 90vh;
+				max-height: 90vh;
+			}
+			.plan-edit-nav{
+				width: 100%;
+				display: flex;
+				margin-top: -10px;
+				height: 5rem;
+				button{
+					background: #EFF0F1;
+					width: 50%;
+					display: inline-block;
+					border-radius: 0;
+					color: $dark;
+					&.active{
+						background: #E1E3E4;
+					}
+					.fa{
+						display: block;
+						font-size: 1.5rem;
+						margin-bottom: 0.2em;
+					}
+					&:first-of-type{
+						border-bottom-left-radius: 5px;
+					}
+					&:last-of-type{
+						border-bottom-right-radius: 5px;
+					}
+				}
+				@include tablet{
+					display: none;
+				}
+			}
+			.categories{
+				display: none;
+				width: 20%;
+				position: relative;
+				@include max-tablet{
+					&.active{
+						display: block;
+					}
+					position: absolute;
+					top: 5rem;
+					left: 1rem;
+					width: calc(50% - 4rem);
+					height: calc(100% - 5rem);
+					background-color: white;
+				}
+				@include max-mobile{
+					&.active{
+						display: block;
+					}
+					position: absolute;
+					top: 5rem;
+					left: 0rem;
+					width: 100%;
+					height: calc(100% - 3rem);
+					background-color: white;
+				}
+				@include desktop{
+					display: block;
+				}
+				ul{
+					width: 100%;
+					list-style: none;
+					padding: 0rem 1rem;
+					margin: 0;
+					// height: 50vh;
+					overflow-y: scroll;
+					@include max-tablet{
+						padding: 0rem 2rem;
+					}
+				}
+				li{
+					margin: 0 0 1rem;
+				}
+				a{
+					display: flex;
+					align-content: center;
+					align-items: center;
+					background-color: $white;
+					border-radius: 5px;
+					padding: 1em 1.5em;
+					box-shadow: 0px 0px 10px rgba($dark, 0.3);
+					text-decoration: none;
+					text-overflow: ellipsis;
+					@include max-tablet{
+						box-shadow: none;
+					}
+					svg,
+					img{
+						display: inline-block;
+						vertical-align: middle;
+						margin: 0 1rem 0 0;
+						height: 1.7em;
+					}
+					.icon-active{
+						display: none;
+					}
+					&.active{
+						position: relative;
+						background-color: $blue;	
+						color: $white;
+						&::after{
+							position: absolute;
+							top: 1em;
+							right: 1rem; 
+							margin: 0.5em 0 0;
+							@extend %fa;
+							content: "\f054";
+							@include max-tablet{
+								content: "\f00c";
+							}
+						}
+						.icon-active{
+							display: inline-block;
+						}
+						.icon-inactive{
+							display: none;
+						}
+					}
+				}//a
+				.scroll-overlay{
+					display: none;
+					position: absolute;
+					width: 100%;
+					height: 10rem;
+					bottom: 0;
+					margin: 0;
+					left: 0;
+					background: linear-gradient(180deg, rgba(243, 247, 250, 0) 0%, #F3F7FA 100%);
+					pointer-events: none;
+				}
+			}//.categories
+			.edit{
+				display: none;
+				width: 100%;
+				background-color: $white;
+				border-radius: 5px;
+				box-shadow: 0px 0px 15px rgba($dark, 0.3);
+				margin: 0;
+				padding: 0 $wrapper-padding 2rem;
+				&.active{
+					display: block !important;
+				}
+				@include tablet{
+					width: 50%;
+					display: block;
+					margin: 0 1rem;
+				}
+				@include desktop{
+					width: 40%;
+				}
+				
+				.add-new{	
+					display: none;
+					button{
+						width: 49.2%;
+					}
+				}
+				&.edit-add-new{
+					.add-existing{
+						display: none;
+					}
+					.add-new{	
+						display: block;
+					}
+				}
+				h3{
+					text-align: center;
+					font-size: 1.2rem;
+					@include max-tablet{
+						border-bottom: 1px solid $dark;
+						cursor: pointer;
+						padding: 0 0 1em;
+						&::after{
+							margin: 0 0 0 1rem;
+							display: inline-block;
+							font: normal normal normal 14px/1 FontAwesome;
+							font-size: inherit;
+							text-rendering: auto;
+							-webkit-font-smoothing: antialiased;
+							-moz-osx-font-smoothing: grayscale;
+							content: "\f0d7"
+						}
+						&.active{
+							&::after{
+								content: "\f00d"
+							}
+						}
+					}
+					img{
+						vertical-align: middle;
+						height: 1em;
+						margin: 0 1em 0 0;
+					}
+				}
+				button{
+					width: 100%;
+				}
+				input,
+				select{
+					width: 100%;
+					height: 3rem;
+					margin: 0.5rem 0;
+				}
+				ul{
+					list-style: none;
+					padding: 0;
+					margin: 0;
+					// max-height: 50vh;
+					height: calc(90vh - 20rem);
+					overflow-y: scroll;
+				}
+				li.planner-edit-item{
+					font-size: 0.9rem;
+					color: $dark;
+					display: flex;
+					align-items: stretch;
+					justify-content: unset;
+					margin: 0 0 1rem;
+					border: 1px solid lighten($dark, 50%);
+					border-radius: 5px;
+					*{
+						padding: 0 0.5em;
+					}
+					> span{
+						display: none;
+						align-items: center;
+						font-size: 1.3rem;
+						@include desktop{
+							display: flex;
+						}
+					}
+					> div{
+						flex-grow: 1;
+						padding: 0 0 1em;
+						p{
+							margin: 0.5em 0 0.3em;
+							font-size: 1.2rem;
+						}
+						span{
+							display: block;
+						}
+					}
+					a,
+					button{
+						width: auto;
+						margin: 0;
+						text-align: center;
+						padding: 1em 1em;
+						display: flex;
+						align-items: center;
+						background-color: $blue;
+						border-radius: 0 5px 5px 0;
+						color: $white;
+						text-decoration: none;
+						&:hover{
+							background-color: darken($blue, 5%);
+						}
+					}
+				}
+			}//.edit
+			.service{
+				display: none;
+				width: 100%;
+				background-color: $white;
+				border-radius: 5px;
+				box-shadow: 0px 0px 15px rgba($dark, 0.3);
+				margin: 0;
+				padding: 0 $wrapper-padding 2rem;
+				&.active{
+					display: block !important;
+				}
+				@include tablet{
+					margin: 0 1rem;
+					display: block;
+					width: 50%;
+				}
+				@include desktop{
+					width: 40%;
+				}
+				h3{
+					text-align: center;
+					border-bottom: 1px solid $dark;
+					padding: 0 0 1em;
+				}
+				> ul{
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					height: calc(90vh - 10rem);
+					overflow: scroll;
+				}
+				li.planner-services-item{
+					margin: 0 0 0.5rem;
+					.card{
+						padding: 0;
+						width: 100%;
+						position: relative;
+						display: flex;
+						border: 1px solid lighten($dark, 50%);
+						border-radius: 5px;
+						z-index: 1;
+						button{
+							padding: 1em;
+							background-color: transparent;
+							color: $dark;
+						}
+						p{
+							padding: 0 1rem;
+							flex-grow: 1;
+							// white-space: nowrap; 
+							// overflow: hidden;
+							// text-overflow: ellipsis; 
+							padding-right: 0.5em;
+							.contributor{
+								display: block;
+								color: $green;
+							}
+							img{
+								vertical-align: middle;
+								height: 1em;
+								margin: 0 1em 0 0;
+							}
+							strong{
+								font-weight: 700;	
+							}
+						}
+						.button-drag{
+							display: flex;
+							align-items: center;
+							background-color: $blue;
+							color: $white;
+							padding: 0.5em;
+							border-radius: 0 5px 5px 0;
+							cursor: move;
+							&::before{
+								padding: 0.3em 0 0;
+								content: url("/assets/images/drag-icon.svg")
+							}
+						}//.button-drag
+					}//.card
+					.dropdown{
+						position: relative;
+						display: none;
+						border: 1px solid lighten($dark, 50%);
+						margin: -1px 2rem 0 1rem;
+						padding: 0.5rem 2rem 1rem;
+						box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+						&.active{
+							display: block;	
+						}
+						input{
+							width: 100%;
+							margin: 0 0 0.5rem;
+						}
+						.autocomplete{
+							display: none;
+							margin: -3px 0 0 ;
+							width: 85%;
+							padding: 0 1rem;
+							position: absolute;
+							z-index: 3;
+							background: $white;
+							box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+							border-radius: 5px;
+							padding: 1rem;
+							list-style: none;
+							li{
+								padding: 0.5rem 0;
+							}
+						}
+						input:focus + .autocomplete{
+							display: block
+						}
+						button{
+							padding: 0.7rem;
+							width: 49%;
+						}
+					}
+				}//li.planner-services-item
+			}
+		}//.container
+	}
+}//.viewPrayer

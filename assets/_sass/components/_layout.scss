@@ -1,0 +1,157 @@
+$wrapper-max-width: 1280px;
+$wrapper-width: 100%;
+$wrapper-padding: 2rem;
+
+body{
+	overflow-x: hidden;
+}
+.wrapper{
+	width: $wrapper-width;
+	max-width: $wrapper-max-width;
+	padding: 0 $wrapper-padding;
+	margin: 0 auto;
+}
+body.active-sm-navigation{
+	.page-content{
+		width: calc(100% - #{$navigation-sm-width});
+		margin: 0 0 0 auto;
+	}
+}
+.page-content{
+	margin: 0 0 0 $navigation-width;
+	padding: 0 0 4rem;
+	width: calc(100% - #{$navigation-sm-width}) !important;
+	@include tablet{
+		width: calc(100% - #{$navigation-width})!important;
+	}
+}
+.card{
+	background-color: $white;
+	border-radius: 5px;
+	width: 100%;
+	padding: $wrapper-padding;
+}
+.card-main{
+	@extend .card;
+	.input-search{
+		display: block;
+		box-sizing: border-box;
+		width: 50%;
+		margin: 1rem 0 2rem auto;
+	}
+	table{
+		width: 100%;
+		td{
+			display: none;
+			padding: 1rem $wrapper-padding;
+			color: $dark;
+			background-color: $gray-alternative;
+		}
+		.title{
+			background-color: $white;
+			a{
+				font-size: 1.2rem;
+				font-weight: 700;
+			}
+			span{
+				display: block;
+			}
+			&::before{
+				float: right;
+				display: none;
+				margin: 0.5em 0 0;
+				font-size: 1.5rem;
+				@extend %fa;
+				content: "\f0da";
+			}
+		}
+		.actions{
+			.desktop{
+				display: block;
+				text-align: center;
+				a{
+					margin: 0 0.5rem;
+				}
+			}
+			.mobile{
+				display: none;
+				text-align: center;
+				button{
+					width: 40%;
+					min-width: 100px;
+				}
+			}
+			
+		}
+	}// table
+	@include desktop{
+		table{
+			.checkbox,
+			td{
+				display: table-cell;
+				background-color: transparent;
+				padding: 1rem $wrapper-padding /2;
+				span{
+					display: none;
+				}
+			}
+		}// table
+	}// @include desktop
+	@include max-tablet{
+		padding: 0;
+		.input-search{
+			display: none;
+		}
+		table{
+			tr{
+				border-bottom: 2px solid $gray;
+			}
+			td{
+				display: none;
+			}
+			.title{
+				display: block;
+				&::before{
+					display: block;
+				}				
+			}
+			.actions{
+				.desktop{
+					display: none;
+				}
+				.mobile{
+					display: block;
+				}
+			}
+		}//table
+		.active{
+			td{
+				display: block;
+			}
+			.title{
+				&::before{
+					content: "\f0d7";
+				}
+			}
+		}//active.
+		.checkbox{
+			display: none !important;
+		}
+	}//@include max-tablet
+}//.card-main
+.card-secundary{
+	@extend .card;
+	padding: 0 0 3rem;
+	margin: 0 auto 2rem;
+	h2{
+		margin: 0;
+		border-bottom: 1px solid $gray;
+		padding: 1rem $wrapper-padding;
+		font-size: 1.5rem;
+	}
+	.wrapper{
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		max-width: 861px;
+	}
+}//.card-small

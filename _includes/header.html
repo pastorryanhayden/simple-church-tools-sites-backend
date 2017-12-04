@@ -1,0 +1,36 @@
+<header class="main-header">
+	<div class="title-actions">
+		<h1>{{page.title}}</h1>
+		
+		<div class="actions">
+			{% if page.addOption %}
+				<button class="button-add openAddModule">Add {{page.addOption}}</button>
+			{% endif %}
+
+			{% if page.handout %}
+				<button class="button-handout">Generate Handout</button>
+			{% endif %}
+		</div>
+	</div><!-- .title-actions -->
+
+	<nav class="sort-navigation">
+		<ul class="sort-navigation">
+			{% if page.filters %}
+				{% for filter in page.filters %}
+					<li>
+						<a {% if forloop.first %}class="active"{% endif %}>{{filter}}</a>
+					</li>
+				{% endfor %}
+			{% endif %}
+		</ul>
+		
+		<label for=""></label>
+		<select name="" id="">
+			{% if page.filters %}
+				{% for filter in page.filters %}
+				<option value="">{{filter}}</option>
+				{% endfor %}
+			{% endif %}
+		</select>
+	</nav>
+</header>

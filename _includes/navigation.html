@@ -1,0 +1,120 @@
+{% comment %}
+	DOCUMENTATION:
+	- To toggle the navigation on the mobile view there is a class "active-sm-navigation" in body that is toggle to expand the navigation.
+{% endcomment %}
+<nav class="navigation" id="main-navigation">
+	<div class="container">
+		<div class="user">
+			<a href="#" id="user-pic" title="View user settings">
+				<img src="https://www.gravatar.com/avatar/fda7191c07def6cbff773b75a91ec8ef.jpg?s=200&d=mm" alt="">
+			</a>
+			<p class="visible-desktop"><a href="#" id="user-name" title="View user settings">Ryan Hayden <i class="fa fa-caret-down"></i></a></p>
+			<span class="visible-desktop">Bible Baptist Church</span>
+
+			<ul class="settings visible-desktop" id="navigation-user-settings">
+				<li>Settings
+					<ul>
+						<li><a href="/personal-settings.html">Your Settings</a></li>
+						<li><a href="/church-settings.html">Bible Baptist Church Settings</a></li>
+					</ul>
+				</li>
+				<li><a href="#"> <i class="fa fa-sign-out"></i>Logout</a></li>
+			</ul>
+		</div><!-- .user -->
+
+		<ul class="menu">
+			
+			<li class="">
+				<div class="title">
+					<a href="{{site.baserurl}}/index.html">
+						<img src="{{site.baseurl}}/assets/images/navigation/Dashboard-icon.svg" alt="">
+						<span class="visible-desktop">Dashboard</span>
+					</a>
+				</div>
+			</li>
+			
+			<li class="">
+				<div class="title">
+					<a href="/welcomePage.html">
+						<img src="{{site.baseurl}}/assets/images/navigation/welcomePage-icon.svg" alt="">
+						<span class="visible-desktop">Welcome Page</span>
+					</a>
+					<a href="/prayers-settings.html" class="config fa fa-cog visible-desktop"></a>
+				</div>
+			</li>
+			
+			<li class="">
+				<div class="title">
+					<a>
+						<img src="{{site.baseurl}}/assets/images/navigation/ministries-icons.svg" alt="">
+						<span class="visible-desktop">Ministries</span>
+					</a>
+					<a href="#" class="config fa fa-cog visible-desktop"></a>
+				</div>
+				<ul class="visible-desktop">
+					<li><a href="/ministries-ministries.html" class="active">Ministries</a></li>
+					<li><a href="/ministries-leaders.html" class="active">Ministries</a></li>
+				</ul>
+			</li>
+			
+			<li class="">
+				<div class="title">
+					<a>
+						<img src="{{site.baseurl}}/assets/images/navigation/events-icon.svg" alt="">
+						<span class="visible-desktop">Events</span>
+					</a>
+					<a href="#" class="config fa fa-cog visible-desktop"></a>
+				</div>
+				<ul class="visible-desktop">
+					<li><a href="#" class="active">Lorem ipsum.</a></li>
+					<li><a href="#" class="active">Lorem ipsum.</a></li>
+				</ul>
+			</li>
+			
+			<li class="">
+				<div class="title">
+					<a>
+						<img src="{{site.baseurl}}/assets/images/navigation/page-icon.svg" alt="">
+						<span class="visible-desktop">Pages</span>
+					</a>
+					<a href="#" class="config fa fa-cog visible-desktop"></a>
+				</div>
+				<ul class="visible-desktop">
+					<li><a href="#" class="active">Lorem ipsum.</a></li>
+					<li><a href="#" class="active">Lorem ipsum.</a></li>
+				</ul>
+			</li>
+			
+			<li class="">
+				<div class="title">
+					<a>
+						<img src="{{site.baseurl}}/assets/images/navigation/photos-icon.svg" alt="">
+						<span class="visible-desktop">Photos</span>
+					</a>
+					<a href="#" class="config fa fa-cog visible-desktop"></a>
+				</div>
+				<ul class="visible-desktop">
+					<li><a href="#" class="active">Lorem ipsum.</a></li>
+					<li><a href="#" class="active">Lorem ipsum.</a></li>
+				</ul>
+			</li>
+			
+			<li class="">
+				<div class="title">
+					<a>
+						<img src="{{site.baseurl}}/assets/images/navigation/blogPost-icon.svg" alt="">
+						<span class="visible-desktop">Blog Posts</span>
+					</a>
+					<a href="#" class="config fa fa-cog visible-desktop"></a>
+				</div>
+				<ul class="visible-desktop">
+					<li><a href="#" class="active">Lorem ipsum.</a></li>
+					<li><a href="#" class="active">Lorem ipsum.</a></li>
+				</ul>
+			</li>
+		
+		</ul><!-- /.menu -->
+	</div> <!-- /.container -->
+
+	<img class="logo visible-desktop" src="{{site.baserurl}}/assets/images/SimpleChurchTools-logo.svg" alt="">
+</nav>

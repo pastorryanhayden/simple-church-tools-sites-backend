@@ -1,0 +1,55 @@
+// Josefin Sans light (300), regular (400) and bold (700) for headings and navigation
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700');
+// Roboto for text light (300), regular (400) and bold (700)
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700');
+// Open Sans for regular (400) and bold (700)
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+
+// $main-font: 'Josefin Sans', sans-serif;
+$main-font: 'Open Sans', sans-serif;
+$text-font: $main-font;
+$heading-font: $main-font;
+html{
+	font-size: 0.85em;
+}
+* {
+	font-family: $main-font;
+}
+
+.text {
+	font-family: $text-font;
+}
+p{
+	line-height: 1.5em;
+	color: $dark;
+	@include tablet{
+		line-height: 1.3em;
+	}
+}
+h1,
+h2,
+h3{
+	font-family: $heading-font;
+	color: $dark;
+}
+h2{
+	font-size: 2rem;
+	margin: 1.5em 0 1em;
+}
+a,
+.link-more{
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: 300;
+	color: $dark;
+	cursor: pointer;
+}
+%fa{
+	display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

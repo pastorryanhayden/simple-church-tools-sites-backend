@@ -1,0 +1,107 @@
+<section class="planner-service-edit" id="addModule">
+	<div class="shadow" id="addModuleOverlay"></div>
+	<div class="content"id="addModuleContent">
+		<div class="wrapper">
+			<button id="close-planner-edit" class="close-planner-edit closeAddModule">
+				<i class="fa fa-times"></i>
+			</button>
+			<h2>Edit Service</h2>
+			<div class="form">
+				<div class="">
+					<label for="">Date:</label>
+					<input type="date" >
+				</div>
+				<div>
+					<label for="">Service Type:</label>
+					<select name="" id="">
+						<option value="">Sunday AM</option>
+						<option value="">Sunday AM</option>
+						<option value="">Sunday AM</option>
+					</select>
+				</div>
+	
+				<div class="plan-edit">
+					<label for="">Planner</label>
+					<p>Drag elements from the left to right to add them to the service.</p>
+					<div class="container">
+						<div id="service-edit-categories" class="categories">
+							<ul class="">
+								{% include planner/planner-category-item.html active=true category="hymn"%}
+								{% include planner/planner-category-item.html category="choir" %}
+								{% include planner/planner-category-item.html category="announcement" %}
+								{% include planner/planner-category-item.html category="Sermon" %}
+								{% include planner/planner-category-item.html category="Recurring Service
+								Elements" icon="other" %}
+								{% include planner/planner-category-item.html category="Chorus" %}
+								{% include planner/planner-category-item.html category="Offering" %}
+							</ul>
+							<div class="scroll-overlay"></div>
+						</div>
+						<div id="service-edit-edit"class="edit active">
+							<h3 id="service-edit-toggle-categories">
+								<img src="{{site.baserur}}/assets/images/other-icon.svg" alt="">
+								Hymn
+							</h3>
+							<div class="add-existing">
+								<button id="service-edit-addnew">Add new Hymn</button>
+								<input type="text" placeholder="Search">
+								<select name="" id="">
+									<option value="">Topic</option>
+									<option value="">Topic</option>
+									<option value="">Topic</option>
+								</select>
+								<ul>
+									{% include planner/planner-edit-item.html %}
+									{% include planner/planner-edit-item.html %}
+									{% include planner/planner-edit-item.html %}
+									{% include planner/planner-edit-item.html %}
+									{% include planner/planner-edit-item.html %}
+								</ul>
+							</div>
+							<div class="add-new">
+									<div>
+										<label for="">Title</label>
+										<input type="text">
+									</div>
+									<div>
+										<label for="">Category:</label>
+										<select name="" id="">
+											<option value="">Category</option>
+											<option value="">Category</option>
+											<option value="">Category</option>
+										</select>
+									</div>
+								<button id="service-edit-new-cancel" class="button-gray">Cancel</button>
+								<button class="button-add-right">Add</button>
+							</div>
+						</div>
+						<div id="plan-edit-service" class="service">
+							<h3>AM Order of Service <br>Sunday, October 8th , 2017</h3>
+							<ul>
+								{% include planner/planner-services-item.html contributor="true"%}
+								{% include planner/planner-services-item.html%}
+								{% include planner/planner-services-item.html%}
+								{% include planner/planner-services-item.html%}
+							</ul>
+						</div>
+						<nav class="plan-edit-nav">
+							<button id="plan-edit-nav-elements" class="active">
+								<i class="fa fa-search"></i>
+								Elements
+							</button>
+							<button id="plan-edit-nav-service">
+								<i class="fa fa-list"></i>
+								Service
+							</button>
+						</nav>
+					</div>
+				</div>
+	
+				<div class="controllers">
+					<button class="button-archive">Archive</button>
+					<button id="planner-service-edit-done" class="closeAddModule">Done</button>
+				</div>
+			</div> <!-- /.form -->
+		</div> <!-- /.wrapper -->
+	</div>
+</section>

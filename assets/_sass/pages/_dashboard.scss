@@ -1,0 +1,77 @@
+body.dashboard{
+	header h1{
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-align: center;
+		font-weight: 400;
+		font-size: 2.3rem;
+	}
+	section.statistics{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		article{
+			width: calc(25% - 1rem);
+			border-radius: 5px;
+			background: $white;
+			margin: 0 0 1rem;
+			padding: 2rem 2rem;
+			text-align: center;
+			@media only screen and (max-width: 950px){
+				width: calc(50% - 1rem);
+				padding: 1rem 2rem;
+			}
+			@media only screen and (max-width: 500px){
+				width: 100%;
+				padding: 0.5rem 2rem;
+			}
+			h2{
+				margin: 0.5em 0;
+				font-size: 1.4rem;
+			}
+			p{
+				font-size: 1.3rem;
+			}
+		}
+	}//section.statistics
+	section.tasks{
+		@extend .card;
+		h2{
+			font-size: 1.5rem;
+			margin: 0;
+		}
+		ul{
+			display: flex;
+			flex-wrap: wrap;
+			list-style: none;
+			padding: 0;
+			justify-content: space-between;
+		}
+		li{
+			width: 25%;
+			@media only screen and (max-width: 950px){
+				width: 50%;
+			}
+			@media only screen and (max-width: 500px){
+				width: 100%;
+			}
+		}
+		a{
+			width: 100%;
+			border-radius: 5px;
+			padding: 2rem 1rem;
+			text-decoration: none;
+			text-align: center;
+			font-weight: 700;
+			&:hover{
+				background: $gray;
+			}
+		}
+		img{
+			display: block;
+			margin: 0 auto 1rem;
+		}
+	}//section.help
+}//body.dashboard

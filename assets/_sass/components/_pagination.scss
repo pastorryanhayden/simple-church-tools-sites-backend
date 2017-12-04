@@ -1,0 +1,51 @@
+.pagination{
+	text-align: center;
+	display: block;
+
+	ul{
+		display: inline-block;
+		list-style: none;
+		padding: 0;
+		margin: 1rem 0 1rem 10rem;
+	}
+	li{
+		display: inline-block;
+	}
+	button{
+		color: $dark;
+		background-color: transparent;
+		padding: 0em 0.5em;
+		line-height: 2.5em;
+		min-width: 2.5em;
+		border-radius: 1.5em;
+	}
+	.active{
+		background-color: $blue;
+		color: $white;
+	}
+
+	.perPage{
+		float: right;
+		margin: 1.5rem 0 0;
+		label{
+			display: inline-block;
+			color: $dark;
+			margin: 0 1em;
+		}
+		select{
+			display: inline-block;
+			width: 7em;
+		}
+	}//.perpage
+	@include max-tablet{
+		ul{
+			margin-left: 0;
+		}
+		.perPage{
+			display: inline-block;
+			width: 100%;
+			float: none;
+			margin: 1rem 0 3rem;
+		}
+	}
+}//.pagination

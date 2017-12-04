@@ -1,0 +1,7 @@
+<li>
+	<a href="#" class="{% if include.active %}active{% endif %}">
+		<img class="icon-inactive" src="{{site.baserur}}/assets/images/{% if include.icon %}{{include.icon | downcase}}{% else %}{{include.category | downcase}}{% endif %}-icon.svg" alt="">
+		<img class="icon-active" src="{{site.baserur}}/assets/images/{% if include.icon %}{{include.icon | downcase}}{% else %}{{include.category | downcase}}{% endif %}-icon-white.svg" alt="">
+		{{include.category}}
+	</a>
+</li>
