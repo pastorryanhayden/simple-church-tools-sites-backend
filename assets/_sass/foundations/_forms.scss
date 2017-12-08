@@ -433,3 +433,16 @@ form,
     }
   }
 }//.form-extend-info
+
+.form-date-time{
+  input{
+    width: 49%;
+    display: inline-block;
+    padding-right: 2.5rem;
+  }
+  .fa{
+    position: absolute;
+    line-height: 2.5rem;
+    margin-left: -2rem;
+  }
+}//.form-date-time

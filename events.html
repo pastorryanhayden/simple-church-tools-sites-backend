@@ -1,12 +1,11 @@
 ---
 layout: default
 body-class: home
-title: "Ministries / Ministries Pages"
+title: "Events"
 filters:
 #- All 
-addOption: "Add Ministry"
+addOption: "Add Leader"
 handout: false
-guide: true
 ---
 <div class="card-main">
 	
@@ -23,7 +22,7 @@ guide: true
 				<input type="checkbox">
 			</td> -->
 			<td class="title">
-				<a href="#">Sunday School</a>
+				<a href="#">Event Name</a>
 				<!-- <span>Health Needs</span> -->
 			</td>
 			<td>
@@ -31,8 +30,8 @@ guide: true
 				The descriptions Lorem ipsum dolor sit.…
 			</td>
 			<td>
-				<span>Leader:</span>
-				Pastor
+				<span>Date:</span>
+				01/01/2018
 			</td>
 			<td class="actions">
 				<div class="desktop">
@@ -60,19 +59,15 @@ guide: true
 		<h2>Add A Ministry</h2>
 		<form action="">
 			<div class="">
-				<label for="">Title:</label>
-				<input type="text" value="Awana">
-			</div>
-			<div>
-				<label for="">Description:</label>
+				<label for="">Name:</label>
 				<input type="text" value="">
 			</div>
-			<div>
-				<label for="">Leader:</label>
-				<input type="text" value="Pastor">
+			<div class="">
+				<label for="">Description::</label>
+				<textarea name="" id=""></textarea>
 			</div>
 			<div>
-				<label for="">Photo:</label>
+				<label for="">Featured Image:</label>
 				<div class="file-dragdrop-img">
 					<label for="">
 						<img src="" alt="">
@@ -82,12 +77,44 @@ guide: true
 						</span>
 						<input type="file">
 					</label>
-					
 				</div>
-				
+			</div>
+			<div class="">
+				<label for="">Location:</label>
+				<input type="text" value="">
 			</div>
 			<div>
-				<label for="">Content:</label>
+				<label for="">Frequency:</label>
+				<select name="" id="">
+					<option value="">Occurs Once</option>
+					<option value="">Weekly</option>
+					<option value="">Monthly</option>
+				</select>
+			</div>
+			<div class="form-date-time">
+				<label for="">Start Date/Time:</label>
+				<input type="date"><i class="fa fa-calendar"></i>
+				<input type="time"><i class="fa fa-clock-o"></i>
+			</div>
+			<div class="form-date-time">
+				<label for="">End Date/Time:</label>
+				<input type="date"><i class="fa fa-calendar"></i>
+				<input type="time"><i class="fa fa-clock-o"></i>
+			</div>
+			<div>
+				<label for="">Ministry:</label>
+				<select name="" id="">
+					<option value=""></option>
+				</select>
+			</div>
+			<div>
+				<label for="">Contact:</label>
+				<select name="" id="">
+					<option value=""></option>
+				</select>
+			</div>
+			<div>
+				<label for="">Body:</label>
 				<textarea name="" class="SimpleMDE" id="InputContent" cols="30" rows="10"></textarea>
 			</div>
 
@@ -101,7 +128,7 @@ guide: true
 
 <section class="guide-module">
 	<button id="guide-module-close" class="close"><i class="fa fa-caret-down"></i></button>
-	<h2>Ministries / Ministries Pages </h2> 
+	<h2>{{page.title}}</h2> 
 	<div class="container">
 		<div class="column content">
 			<p>This is the most important page on your website.  It is a page specifically designed to turn vistors of your website into visitors of your church.  The page has two goals:</p>

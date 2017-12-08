@@ -1,6 +1,10 @@
 <header class="main-header">
 	<div class="title-actions">
-		<h1>{{page.title}}</h1>
+		<h1>{{page.title}}
+			{% if page.guide %}
+			<button id="guide-module-open" class="fa fa-info-circle guide-module-open"></button>
+			{% endif %}
+		</h1>
 		
 		<div class="actions">
 			{% if page.addOption %}
