@@ -1,10 +1,10 @@
 ---
 layout: default
-body-class: home
-title: "Events"
+body-class: 
+title: "Blog / Posts"
 filters:
 #- All 
-addOption: "Add Leader"
+addOption: "Add Post"
 handout: false
 guide: true
 ---
@@ -23,12 +23,16 @@ guide: true
 				<input type="checkbox">
 			</td> -->
 			<td class="title">
-				<a href="#">Event Name</a>
+				<a href="#">Post Title</a>
 				<!-- <span>Health Needs</span> -->
 			</td>
 			<td>
 				<span>Description:</span>
 				The descriptions Lorem ipsum dolor sit.…
+			</td>
+			<td>
+				<span>Author:</span>
+				Author
 			</td>
 			<td>
 				<span>Date:</span>
@@ -57,15 +61,25 @@ guide: true
 <section class="addModule" id="addModule">
 	<div class="shadow" id="addModuleOverlay"></div>
 	<div class="content"id="addModuleContent">
-		<h2>Add A Ministry</h2>
+		<h2>Add A Post</h2>
 		<form action="">
 			<div class="">
-				<label for="">Name:</label>
+				<label for="">Title:</label>
 				<input type="text" value="">
 			</div>
 			<div class="">
 				<label for="">Description::</label>
 				<textarea name="" id=""></textarea>
+			</div>
+			<div class="">
+				<label for="">Autor:</label>
+				<select name="" id="">
+					<option value="">Autor</option>
+				</select>
+			</div>
+			<div class="form-date-time">
+				<label for="">Date:</label>
+				<input type="date"><i class="fa fa-calendar"></i>
 			</div>
 			<div>
 				<label for="">Featured Image:</label>
@@ -81,37 +95,9 @@ guide: true
 				</div>
 			</div>
 			<div class="">
-				<label for="">Location:</label>
-				<input type="text" value="">
-			</div>
-			<div>
-				<label for="">Frequency:</label>
+				<label for="">Category:</label>
 				<select name="" id="">
-					<option value="">Occurs Once</option>
-					<option value="">Weekly</option>
-					<option value="">Monthly</option>
-				</select>
-			</div>
-			<div class="form-date-time">
-				<label for="">Start Date/Time:</label>
-				<input type="date"><i class="fa fa-calendar"></i>
-				<input type="time"><i class="fa fa-clock-o"></i>
-			</div>
-			<div class="form-date-time">
-				<label for="">End Date/Time:</label>
-				<input type="date"><i class="fa fa-calendar"></i>
-				<input type="time"><i class="fa fa-clock-o"></i>
-			</div>
-			<div>
-				<label for="">Ministry:</label>
-				<select name="" id="">
-					<option value=""></option>
-				</select>
-			</div>
-			<div>
-				<label for="">Contact:</label>
-				<select name="" id="">
-					<option value=""></option>
+					<option value="">Category</option>
 				</select>
 			</div>
 			<div>
