@@ -10,7 +10,7 @@
 
 ## Documentation
 
-To use just cd into the repo and then `npm install` and `npm start`.
+To use just cd into the repo and then `npm install` and `npm start`. If you get and error you can run `bundle exec npm start`
 
 See Frasco Documentation
 https://ixkaito.github.io/frasco/

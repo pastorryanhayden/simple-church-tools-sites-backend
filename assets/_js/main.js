@@ -81,8 +81,11 @@ if (addModule) {
 
 // SimpleMDE
 // ==================
-new SimpleMDE({
-    element: document.getElementById('InputContent'),
+$('.SimpleMDE').each(function() {
+    var simplemde = new SimpleMDE({
+        element: this,
+    });
+    simplemde.render();
 });
 
 
@@ -165,4 +168,31 @@ $('.planner-services-item .button-contributor').on('click', function(button) {
     $(this).parents( '.planner-services-item')
         .find('.dropdown').toggleClass('active');
 });
+
+// guide-module
+// ================
+var guideModule = document.getElementsByClassName('guide-module')[0];
+var guideModuleClose = document.getElementById('guide-module-close');
+var guideModuleOpen = document.getElementsByClassName('guide-module-open');
+
+if (guideModule) {
+    setTimeout(function() {
+        guideModule.classList.add('active');
+    }, 1000);
+}
+if (guideModuleClose) {
+    guideModuleClose.addEventListener('click', function() {
+        guideModule.classList.remove('active');
+    });
+}
+if (guideModuleOpen) {
+    for (var key in guideModuleOpen) {
+        if (guideModuleOpen.hasOwnProperty(key)) {
+            var button = guideModuleOpen[key];
+            button.addEventListener('click', function() {
+                guideModule.classList.add('active');
+            });
+        }
+    }
+}
 

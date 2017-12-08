@@ -1,0 +1,73 @@
+---
+layout: default
+body-class: "settings"
+title: "Design Settings"
+header: simple
+---
+<div class="card-secundary categories">
+	<h2>Bible Baptist Church</h2>
+	<div class="wrapper">
+		<div class="form">
+			<div>
+				<label for="">The webhook URL</label>
+				<input type="text">
+			</div>
+			
+			<div>
+				<label for="">Simple Church Tools ID </label>
+				<input type="text">
+			</div>
+			
+			<div class="form-theme-fonts">
+				<p>Theme Fonts</p>
+				<label >
+					<input type="radio" name="theme-fonts">
+					<span>
+						<p class="heading"style="">Heading</p>
+						<p>Body font</p>
+					</span>
+				</label>
+				<label >
+					<input type="radio" name="theme-fonts">
+					<span>
+						<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+						<p class="heading"style="font-family: 'Slabo 27px', serif;">Heading</p>
+						<p>Body font</p>
+					</span>
+				</label>
+				<label >
+					<input type="radio" name="theme-fonts">
+					<span>
+						<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700" rel="stylesheet">
+						<p class="heading"style="font-family: 'Libre Baskerville',serif;">Heading</p>
+						<p>Body font</p>
+					</span>
+				</label>
+			</div>
+
+			<div class="form-color-scheme">
+				<p>Color scheme</p>
+				{% for item in (1..4) %}
+				<label >
+					<input type="radio" name="color-scheme">
+					<span>
+						Awesome name
+						<ul>
+							<li style="background-color: #27231F"></li>
+							<li style="background-color: #142735"></li>
+							<li style="background-color: #972C2A"></li>
+							<li style="background-color: #FFFFF"></li>
+							<li style="background-color: #004E23"></li>
+						</ul>
+					</span>
+				</label>
+				{% endfor %}
+			</div>
+		</div> <!-- /.form -->
+	</div> <!-- /.wrapper -->
+</div> <!-- /.card-secundary.categories-->
+
+<div class="buttons">
+	<button class="button-orange">Discard Changes</button>
+	<button class="button-green">Save Changes</button>
+</div>

@@ -12,62 +12,6 @@ body.settings{
 			min-width: 10rem;
 		}
 	}
-	.upload-image{
-		label{
-			width: 100%;
-		}
-		.dropbox{
-			border: 1px solid #cdcdcd;
-			border-radius: 5px;
-			width: 400px;
-			display: inline-block;
-			position: relative;
-			@media only screen and(max-width: 900px){
-				width: 100%;
-			}
-			input{
-				vertical-align: top;
-				display: inline-block;
-				height: 7rem;
-				
-				position: relative;
-				width: 100%;
-				opacity: 0;
-			}
-			p{
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				line-height: 1em;
-				text-align: center;
-				i{
-					margin: 1rem 0 0;
-					display: block;
-					width: 100%;
-					text-align: center;
-					font-size: 2rem;
-				}
-				span{
-					margin: -2rem 0;
-					display: block;
-				}
-			}
-		}
-		img{
-			vertical-align: top;
-			display: inline-block;
-			background: $gray;
-			width: 7rem;
-			height: 7rem;
-			@media only screen and(max-width: 900px){
-				display: block;
-				margin: 0 auto 1rem;
-			}
-		}
-	}
 }//body.settings
 
 body.prayers-settings{

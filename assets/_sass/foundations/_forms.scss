@@ -76,6 +76,7 @@ a.button,
     background-color: darken($orange, 5);
   }
 }
+
 .button-login{
   @extend .button;
   padding-top: 0.8em;
@@ -155,16 +156,72 @@ label {
   font-weight: 600;
   font-size: .9rem;
   display: block;
-  margin: .5rem 0;
-}
-form{
+  margin: .5rem 0 1.5rem;
   color: $dark;
+}
+form,
+.form,{
+  // color: $dark;
   > div{
-    margin: 0 0 1rem;
+    margin: 0 0 1.5rem;
   }
 }
-.input-search{
-
+.upload-image{
+  label{
+    width: 100%;
+  }
+  .dropbox{
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    width: 400px;
+    display: inline-block;
+    position: relative;
+    @media only screen and(max-width: 900px){
+      width: 100%;
+    }
+    input{
+      cursor: pointer;
+      vertical-align: top;
+      display: inline-block;
+      height: 7rem;
+      
+      position: relative;
+      width: 100%;
+      opacity: 0;
+    }
+    p{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      line-height: 1em;
+      text-align: center;
+      i{
+        margin: 1rem 0 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+      }
+      span{
+        margin: -2rem 0;
+        display: block;
+      }
+    }
+  }
+  img{
+    vertical-align: top;
+    display: inline-block;
+    background: $gray;
+    width: 7rem;
+    height: 7rem;
+    @media only screen and(max-width: 900px){
+      display: block;
+      margin: 0 auto 1rem;
+    }
+  }
 }
 
 .form-addTags{
@@ -218,3 +275,161 @@ form{
     }
   }
 }//.form-addTag
+
+.form-theme-fonts{
+  p{
+    font-weight: 600;
+    font-size: .9rem;
+    display: block;
+    margin: .5rem 0;
+    display: block !important;
+
+  }
+  input[type="radio"]{
+    position: absolute;
+    visibility: hidden;
+   &:checked + span{
+     background: $light-gray;
+   } 
+  }
+  label{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0rem 1rem 1rem 0;
+    width: 13.3rem;
+    max-width: 100%;
+    @media screen and (max-width: 940px){
+      width: calc(50% - 1rem);
+      &:nth-last-of-type(even){
+        margin-right: 0;
+      }
+    }
+    @media screen and (max-width: 500px){
+      width: 100%;
+      margin-right: 0;
+    }
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+  span{
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    padding: 1.5rem 1.5rem;
+    border: 1px solid lighten($dark, 50%);
+    text-align: center;
+    cursor: pointer;
+    p{
+      display: block;
+      margin: 0;
+      font-weight: initial;
+    }
+    .heading{
+      font-size: 1.5em;
+      line-height: 2em;
+    }
+  }
+}
+
+.form-color-scheme{
+  p{
+    font-weight: 600;
+    font-size: .9rem;
+    display: block;
+    margin: .5rem 0;
+    display: block !important;
+  }
+  input[type="radio"]{
+    position: absolute;
+    visibility: hidden;
+   &:checked + span{
+     background: $light-gray;
+   } 
+  }
+  label{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0rem 1rem 1rem 0;
+    width: calc(50% - 1rem);
+    margin-right: 1rem;
+    &:nth-last-of-type(odd){
+      margin-right: 0;
+    }
+    @media screen and (max-width: 600px){
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  span{
+    min-width: 10rem;
+    display: block;
+    border-radius: 5px;
+    padding: 1.5rem 2rem;
+    border: 1px solid lighten($dark, 50%);
+    text-align: center;
+    cursor: pointer;
+  }
+  ul{
+    font-size: 0;
+    list-style: none;
+    display: block;
+    margin: 0.5rem auto 0.5rem;
+    padding: 0;
+  }
+  li{
+    display: inline-block;
+    height: 2rem;
+    width: 1.8rem;
+    padding: 0;
+    &:first-of-type{
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    &:last-of-type{
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    @media screen and (max-width: 400px){
+      height: 1.3rem;
+      width: 1.3rem;
+    }
+  }
+}//.form-color-scheme
+
+// Simple MDE
+// ==================
+.CodeMirror, .CodeMirror-scroll {
+  min-height: 100px;
+}
+
+.form-extend-info{
+  float: right;
+  margin: 0 1rem 1rem;
+  right: 0;
+  cursor: help;
+  z-index: 2;
+  .fa{
+    font-size: 1.5rem;
+    color: $dark;
+  }
+  div{
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease; 
+    position: absolute;
+    width: 50vw;
+    padding: 1.5rem 1.5rem;
+    border-radius: 5px;
+    background: $white;
+    transform: translateX(-50vw);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25)
+  }
+  &:hover{
+    div{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}//.form-extend-info
