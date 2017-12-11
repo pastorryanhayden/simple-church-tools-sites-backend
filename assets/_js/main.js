@@ -1,26 +1,37 @@
 // Togle user settings
 // ==================
 var UserSettings = document.getElementById('navigation-user-settings');
-document.getElementById('user-pic').addEventListener('click', function() {
-    UserSettings.classList.toggle('active');
-});
-document.getElementById('user-name').addEventListener('click', function() {
-    UserSettings.classList.toggle('active');
-});
+if (document.getElementById('user-pic')) {
+    document.getElementById('user-pic').addEventListener('click', function() {
+        UserSettings.classList.toggle('active');
+    });
+}
+if (document.getElementById('user-name')) {
+    document.getElementById('user-name').addEventListener('click', function() {
+        UserSettings.classList.toggle('active');
+    });
+}
+
 
 // Togle navigation
 // ==================
 var mainNavigation = document.getElementById('main-navigation');
-mainNavigation.addEventListener('click', function() {
-    if (jQuery('body').hasClass('active-sm-navigation')) {
-        document.body.classList.remove('active-sm-navigation');
-    }
-});
-document.getElementById('main-content').addEventListener('click', function() {
-    if (!jQuery('body').hasClass('active-sm-navigation')) {
-        document.body.classList.add('active-sm-navigation');
-    }
-});
+if (mainNavigation) {
+    mainNavigation.addEventListener('click', function() {
+        if (jQuery('body').hasClass('active-sm-navigation')) {
+            document.body.classList.remove('active-sm-navigation');
+        }
+    });
+}
+if (document.getElementById('main-content')) {
+    document.getElementById('main-content')
+    .addEventListener('click', function() {
+        if (!jQuery('body').hasClass('active-sm-navigation')) {
+            document.body.classList.add('active-sm-navigation');
+        }
+    });
+}
+
 window.addEventListener('resize', function() {
     if (window.innerWidth >= 768) {
         document.body.classList.add('active-sm-navigation');
@@ -215,7 +226,6 @@ $(document).bind('click', function(e) {
 
 // .upload-album
 // ==================
-
 $('.upload-album-open').click(function() {
     event.preventDefault();
     $(this).parent().next( '.fullscreen' ).addClass('active');

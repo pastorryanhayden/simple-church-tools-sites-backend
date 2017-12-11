@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+  <body class="{{page.body-class}} adminTasks">
+    <main class="page-content" aria-label="Content" id="main-content">
+      <div class="wrapper">
+        
+        <header class="main-header">
+          <button class="logout">Logout</button>
+          <img src="/assets/images/SimpleChurchTools-dark-logo.svg" alt="" class="logo">
+          
+          <div class="title-actions">
+            <h1>{{page.title}}</h1>
+            <button class="button-add openAddModule"> Add {{page.addOption}}</button>
+          </div><!-- .title-actions -->
+        </header>
+        <nav class="sort-navigation">
+          <ul class="sort-navigation">
+              {% if page.filters %}
+                {% for filter in page.filters %}
+                  <li>
+                    <a {% if forloop.first %}class="active"{% endif %}>{{filter}}</a>
+                  </li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+        </nav>
+        
+        {{ content }}
+      
+      </div><!-- /.wrapper -->
+    </main>
+    {% include footer.html %}
+  </body>
+
+</html>

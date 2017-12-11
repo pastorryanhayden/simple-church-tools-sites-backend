@@ -1,0 +1,51 @@
+body.adminTasks{
+	.wrapper{
+		padding: 0;
+	}
+	.page-content{
+		margin: 0 auto;
+	}
+	
+	.main-header{
+		.logout{
+			float: right;
+			clear: both;
+			background: #E9EDEF;
+			color: $dark;
+			margin: 2rem 1rem 1rem;
+			&::before{
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0 0.5rem 0 0;
+				@extend %fa;
+				content: "\f08b"
+			}
+			&:hover{
+				background: darken(#E9EDEF, 5%);
+			}
+		}//.logout
+		.logo{
+			display: block;
+			margin: 1rem auto 2rem;
+			width: 25rem;
+			max-width: 100%;
+			clear: both;
+		}
+		.title-actions{
+			display: flex;
+			justify-content: space-between;
+			h1{
+				margin: 0 1rem 0.5rem 0;
+			}
+		}
+	}
+	.button-add{
+		float: right;
+	}
+	.sort-navigation ul{
+		margin: 1rem 0 2rem;
+	}
+	label{
+		margin-bottom: 0.3rem;
+	}
+}//body.adminTasks

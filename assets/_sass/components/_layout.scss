@@ -30,6 +30,7 @@ body.active-sm-navigation{
 	border-radius: 5px;
 	width: 100%;
 	padding: $wrapper-padding;
+	overflow: hidden;
 }
 .card-main{
 	@extend .card;
@@ -59,7 +60,7 @@ body.active-sm-navigation{
 			&::before{
 				float: right;
 				display: none;
-				margin: 0.5em 0 0;
+				margin: 0.1em 0 0;
 				font-size: 1.5rem;
 				@extend %fa;
 				content: "\f0da";
