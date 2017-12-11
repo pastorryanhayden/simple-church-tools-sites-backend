@@ -223,7 +223,94 @@ form,
     }
   }
 }
-
+.upload-album{
+  input[type="file"]{
+    display: none; 
+  }
+  .photos{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem 0 0;
+    figure{
+      margin: 0 1rem 1rem 0;
+      padding: 0;
+      width: calc(50% - 0.5rem);
+      height: 10rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      @include max-mobile{
+        &:nth-last-of-type(2n+1){
+          margin-right: 0;
+        }
+      }
+      @include tablet{
+        width: calc(33.33% - 0.67rem);
+        &:nth-last-of-type(3n+1){
+          margin-right: 0;
+        }
+      }
+    }//figure
+  }//.photos
+  .actions{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: rgba(#000, 0.2);
+    &:hover{
+      opacity: 1;
+    }
+    button{
+      background: transparent;
+      color: $white;
+      font-size: 1.5rem;
+      margin: 1rem;
+      padding: 1rem;
+    }
+  }//.actions
+  .fullscreen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(#000, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    &.active{
+      opacity: 1;
+      visibility: visible;
+    }
+    .container{
+      position: relative;
+      padding: 1.5rem 1.5rem;
+      background-color: $white;
+      border-radius: 5px;
+    }
+    .upload-album-fullsc-close{
+      position: absolute;
+      top: -1em;
+      right: -1em;
+      background: #000;
+      color: $white;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      padding: 0.5em 0.6em;
+      box-shadow: 0px 0px 15px rgba(#000,0.1);
+    }
+  }
+}//.upload-album
 .form-addTags{
   position: relative;
   .tags{
@@ -446,3 +533,93 @@ form,
     margin-left: -2rem;
   }
 }//.form-date-time
+input[type="checkbox"].custom-checkbox{
+  display: none;
+  & + label{
+    display: inline-block;
+    &::before{
+      @extend %fa;
+      content: "";
+      display: inline-flex;
+      vertical-align: middle;
+      border: 2px solid $dark;
+      border-radius: 5px;
+      height: 2rem;
+      width: 2rem;
+      padding: 0;
+      margin: 0 1rem 0 0;
+      font-size: 1.4em;
+      font-weight: 400;
+    }
+  }
+  &:checked + label::before{
+    color: $white;
+    background-color: $dark;
+    content: "\f00c";
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* General dropdown styles */
+//http://www.jankoatwarpspeed.com/reinventing-a-drop-down-with-css-and-jquery/
+.custom-dropdown dd,
+.custom-dropdown dt,
+.custom-dropdown ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.custom-dropdown dd {
+  position: relative;
+}
+
+/* DT styles for sliding doors */
+
+.custom-dropdown dt a {
+  @extend input;
+  @extend select;
+  display: block;
+  padding-right: 20px;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.custom-dropdown dt a span {
+  cursor: pointer;
+  display: block;
+  padding: 5px;
+}
+
+/* UL styles */
+
+.custom-dropdown dd ul {
+  background: $white none repeat scroll 0 0;
+  display: none;
+  list-style: none;
+  padding: 5px 0;
+  position: absolute;
+  left: 0px;
+  top: 2px;
+  width: 100%;
+  min-width: 170px;
+  z-index: 4;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.custom-dropdown span.value {
+  display: none;
+}
+
+.custom-dropdown dd ul li a {
+  padding: 5px 1rem;
+  display: block;
+  text-decoration: none;
+  &:hover{
+    background: rgba(#000, 0.1);
+  }
+}

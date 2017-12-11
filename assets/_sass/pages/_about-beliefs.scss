@@ -1,0 +1,8 @@
+.beliefs-list-icon{
+	display: inline-block;
+	vertical-align: middle;
+	height: 16px;
+	& + p{
+		display: inline-block;
+	}
+}

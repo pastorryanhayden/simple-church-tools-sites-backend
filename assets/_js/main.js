@@ -166,7 +166,7 @@ if (planEditTogCate) {
 // ==================
 $('.planner-services-item .button-contributor').on('click', function(button) {
     $(this).parents( '.planner-services-item')
-        .find('.dropdown').toggleClass('active');
+        .find('.custom-dropdown').toggleClass('active');
 });
 
 // guide-module
@@ -196,3 +196,31 @@ if (guideModuleOpen) {
     }
 }
 
+// Custom dropdown
+// ==================
+$('.custom-dropdown dt a').click(function() {
+    $('.custom-dropdown dd ul').toggle();
+});
+$('.custom-dropdown dd ul li a').click(function() {
+    var text = $(this).html();
+    $('.custom-dropdown dt a span').html(text);
+    $('.custom-dropdown dd ul').hide();
+});
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (! $clicked.parents().hasClass('custom-dropdown')) {
+        $('.custom-dropdown dd ul').hide();
+    }
+});
+
+// .upload-album
+// ==================
+
+$('.upload-album-open').click(function() {
+    event.preventDefault();
+    $(this).parent().next( '.fullscreen' ).addClass('active');
+});
+$('.upload-album-fullsc-close').click(function() {
+    event.preventDefault();
+    $(this).parents('.fullscreen').removeClass('active');
+});
