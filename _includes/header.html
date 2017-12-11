@@ -29,12 +29,12 @@
 		</ul>
 		
 		<label for=""></label>
+		{% if page.filters %}
 		<select name="" id="">
-			{% if page.filters %}
 				{% for filter in page.filters %}
 				<option value="">{{filter}}</option>
 				{% endfor %}
-			{% endif %}
 		</select>
+		{% endif %}
 	</nav>
 </header>
