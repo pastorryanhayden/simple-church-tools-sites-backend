@@ -24,17 +24,13 @@ header: simple
 				</div>
 			</div>
 			<div>
+				<label for="">Church Address</label>
+				<textarea name="" id="" ></textarea>
+			</div>
+			<!-- <div>
 				<label for="">Password</label>
 				<input type="password">
-			</div>
-			<div>
-				<label for="">Church URL</label>
-				<input type="url">
-			</div>
-			<div>
-				<label for="">Church Address</label>
-				<input type="text">
-			</div>
+			</div> -->
 			<div>
 				<label for="">Church Phone</label>
 				<input type="tel">
@@ -44,13 +40,53 @@ header: simple
 				<input type="email">
 			</div>
 			<div>
-				<label for="">Service Times</label>
-				<input type="text">
-			</div>
-			<div>
 				<label for="">Pastor Name</label>
 				<input type="text">
 			</div>
+			<div class="settings-serviceTime">
+				<label for="">Service Times</label>
+				<fieldset>
+					<input type="text" placeholder="Day of the week">
+					<input type="text" placeholder="Name">
+					<input type="text" placeholder="Time">
+					<button class="button-addService" title="Add Service Times">
+						<span class="mobile">
+							Add Service Times
+						</span>
+						<i class="fa fa-plus"></i>
+					</button>
+				</fieldset>
+				<ul>
+					{% for service in (1..4) %}
+					<li>
+						<p>Sunday - Sunday School - 9:30am</p>
+						<button class="button-removeService" title="Remove Service Times">
+							<i class="fa fa-times"></i>
+						</button>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="settings-churchURL">
+				<label for="settings-churchURL-field">Church URL</label>
+				<div class="alert currentUrl">
+					<i class="fa fa-link"></i>
+					<p>Your site is published at <a href="#" title="Go to site">church-name.simplechurchwebsites.co</a></p>
+				</div>
+				<div class="indent">
+					<label>
+						Custom domain:
+						<input type="url" id="settings-churchURL-field">
+					</label>
+					<div class="alert warning">
+						<i class="fa fa-exclamation-triangle"></i>
+						<p>
+							Do not change until you have pointed your DNS to our servers. <br>
+							<a href="#">Need help with that?</a>
+						</p>
+					</div>
+				</div>
+			</div> <!-- /.settings-churchURL -->
 		</div> <!-- /.form -->
 	</div> <!-- /.wrapper -->
 </div> <!-- /.card-secundary.categories-->

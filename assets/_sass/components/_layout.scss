@@ -156,3 +156,25 @@ body.active-sm-navigation{
 		max-width: 861px;
 	}
 }//.card-small
+
+div.alert{
+	width: 100%;
+	border-radius: 5px;
+	padding: 0.75em 1em;
+	i{
+		display: inline-block;
+		vertical-align: middle;
+		color: inherit;
+		margin-right: 0.75em;
+	}
+	p{
+		display: inline-block;
+		vertical-align: middle;
+		width: calc(100% - 2.25rem);
+		color: inherit;
+		margin: 0;
+	}
+	a{
+		color: inherit;
+	}
+}

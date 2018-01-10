@@ -120,5 +120,83 @@ body.prayers-settings{
 }//.prayers-settings
 
 body.church-settings{
-
 }
+
+
+.settings-serviceTime{
+	fieldset{
+		padding: 0.5em 0.75em;
+		border: none;
+		border-radius: 5px;
+		background: $gray;
+		text-align: center;
+		input{
+			display: inline-block;
+			vertical-align: midd;
+			width: calc(33% - 1.35rem);
+			margin-right: 0.25em;
+			background-color: $white;
+		}
+		.button-addService{
+			padding: 0.7rem 1rem;
+			.mobile{
+				display: none;
+			}
+		}
+	}//fieldset
+	ul{
+		padding: 0 3rem 0 4rem;
+	}
+	li{
+		line-height: 2em;
+		p{
+			display: inline-block;
+			vertical-align: middle;
+			width: calc(100% - 2.5rem);
+		}
+	}
+	.button-removeService{
+		display: inline-block;
+		vertical-align: middle;
+		background-color: transparent;
+		padding: 0.5em 0.75em;
+		color: $dark !important;
+	}
+	@include max-mobile{
+		fieldset{
+			input{
+				width: 100%;
+				margin-bottom: 0.5em;
+			}
+			.button-addService{
+				padding: 0.7rem 1rem;
+				width: 100%;
+				.mobile{
+					display: inline-block;
+					margin-right: 0.5em;
+				}
+			}
+		}//fieldset
+		ul{
+			padding: 0 1.5rem 0 3rem;
+		}
+	}//@include max-mobile
+}//.settings-serviceTime
+
+.settings-churchURL{
+	.currentUrl{
+		background-color: rgba($green, 0.1);
+		color: darken($green, 10%);
+	}
+	.warning{
+		color: darken($orange, 10%);
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.indent{
+		padding: 1rem 0 1rem 2rem;
+		label{
+			font-weight: 400;
+		}
+	}
+}//.settings-churchURL
