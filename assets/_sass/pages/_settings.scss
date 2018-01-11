@@ -3,6 +3,10 @@ body.settings{
 		width: 95%;
 		max-width: 578px;
 		margin: 0 auto;
+		.button-add{
+			float: right;
+			clear: both;
+		}
 	}
 	.buttons{
 		margin: 0 auto;
@@ -200,3 +204,27 @@ body.church-settings{
 		}
 	}
 }//.settings-churchURL
+
+.masterAdministrator-info{
+	text-align: center;
+	padding: 0 0 2rem;
+	h2{
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 1.5rem;
+	}
+	h3{
+		margin: 0.5em 0;
+		font-size: 1rem;
+		font-weight: 400;
+	}
+}//masterAdministrator-info
+
+.table-administrators{
+	td {
+		text-align: center;
+		&:first-of-type{
+			text-align: left;
+		}
+	}
+}//.table-Administrators

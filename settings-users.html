@@ -1,0 +1,61 @@
+---
+layout: default
+body-class: "settings"
+title: "Manage Administrators"
+header: simple
+---
+<section class="masterAdministrator-info">
+	<h2>Ryan Hayden</h2>
+	<h3>Administrator</h3>
+	<p><strong>Email:</strong>ryan@rowandtable.com</p>
+</section>
+
+<div class="card-secundary categories">
+	<h2>Add user</h2>
+	<div class="wrapper">
+		<div class="form">
+			<div>
+				<label for="">Name</label>
+				<input type="text">
+			</div>
+			<div>
+				<label for="">E-mail</label>
+				<input type="email">
+				<p>The user will receive and email with instructions to active the acount.</p>
+			</div>
+			<button class="button-add">Add User</button>
+		</div> <!-- /.form -->
+	</div> <!-- /.wrapper -->
+</div> <!-- /.card-secundary.categories-->
+
+<div class="card-main card-secundary categories">
+	<h2>Users</h2>
+	<table class="maintable-list table-administrators">
+		<!-- maintable-item -->
+		{% for item in (1..5) %}
+		<tr class="active">
+			<!-- <td class="checkbox">
+				<input type="checkbox">
+			</td> -->
+			<td class="title">
+				<a href="#">Ryan Hayden</a>
+				<!-- <span>Health Needs</span> -->
+			</td>
+			<td>
+				<span>E-mail:</span>
+				email@domain.com
+			</td>
+			<td class="actions">
+				<div class="desktop">
+					<a href="#"><i class="fa fa-times"></i></a>
+				</div>
+				<div class="mobile">
+					<button class="button-orange">Delete</button>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+		<!-- /maintable-item -->
+	</table>
+</div> <!-- /.card-secundary.categories-->
+
