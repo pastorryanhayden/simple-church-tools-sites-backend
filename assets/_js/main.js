@@ -1,16 +1,22 @@
 // Togle user settings
 // ==================
 var UserSettings = document.getElementById('navigation-user-settings');
-if (document.getElementById('user-pic')) {
-    document.getElementById('user-pic').addEventListener('click', function() {
+// if (document.getElementById('user-pic')) {
+// document.getElementById('user-pic').addEventListener('click', function() {
+//     UserSettings.classList.toggle('active');
+// });
+// }
+if (document.getElementById('navigation-header')) {
+    document.getElementById('navigation-header')
+        .addEventListener('click', function() {
         UserSettings.classList.toggle('active');
     });
 }
-if (document.getElementById('user-name')) {
-    document.getElementById('user-name').addEventListener('click', function() {
-        UserSettings.classList.toggle('active');
-    });
-}
+// if (document.getElementById('user-name')) {
+// document.getElementById('user-name').addEventListener('click', function() {
+//     UserSettings.classList.toggle('active');
+// });
+// }
 
 
 // Togle navigation
