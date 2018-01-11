@@ -93,5 +93,33 @@ header: simple
 
 <div class="buttons">
 	<button class="button-orange">Discard Changes</button>
-	<button class="button-green">Save Changes</button>
+	<button class="button-green" id="button-saveChanges">Save Changes</button>
 </div>
+
+<div class="popup-message-alert" id="popup-message">
+	<div class="overlay"></div>
+	<section class="card">
+		<h2>
+			<i class="fa fa-exclamation-triangle"></i>
+			Warning
+		</h2>
+		<p>You are about to change the domain of your site. Are you sure about this action?</p>
+		<div class="buttons">
+			<button class="button-orange">Discard Changes</button>
+			<button class="button-green" id="button-confirm-saveChanges">Save Changes</button>
+		</div>
+	</section>
+</div>
+
+<script>
+	// This Script is only show how the button and Popup module should work
+	var popupMessage = document.getElementById("popup-message");
+	var buttonconfirmsaveChanges = document.getElementById('button-confirm-saveChanges');
+	var buttonSaveChanges = document.getElementById('button-saveChanges');
+	buttonSaveChanges.addEventListener("click", function(){
+		popupMessage.classList.add("active");
+	})
+	buttonconfirmsaveChanges.addEventListener("click", function(){
+		popupMessage.classList.remove("active");
+	})
+</script>

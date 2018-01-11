@@ -178,3 +178,50 @@ div.alert{
 		color: inherit;
 	}
 }
+
+%popup-message,
+.popup-message{
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	.overlay{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: rgba($dark, 0.25);
+	}
+	.card{
+		position: relative;
+		max-width: 500px;
+		height: auto;
+	}
+	h2{
+		text-align: center;
+		font-size: 1.25rem;
+		margin: 0.25em 0;
+		padding-bottom: 0.25em;
+		.fa{
+			display: inline-block;
+			margin-right: 0.5em;
+		}
+	}
+	.buttons{
+		padding-top: 0.5rem !important;
+	}
+	&.active{
+		visibility: visible;
+	}
+}//.popup-message
+.popup-message-alert{
+	@extend %popup-message;
+	h2{
+		color: darken($orange, 10%);
+	}
+}
