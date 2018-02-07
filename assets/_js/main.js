@@ -252,22 +252,20 @@ for (var i = 0; i < contactResponsesOpen.length; i++) {
     var buttonOpen = contactResponsesOpen[i];
     buttonOpen.addEventListener('click', function() {
         popupContactResponses.classList.add('active');
-        console.log('You opened the popup');
     });
 }
 for (var ind = 0; ind < contactResponsesClose.length; ind++) {
     var buttonClose = contactResponsesClose[ind];
     buttonClose.addEventListener('click', function() {
         popupContactResponses.classList.remove('active');
-        console.log('You closed the popup');
     });
 }
-var contactResponsesMark =  document
+var contactResponsesMark = document
  .getElementsByClassName('contactResponses-mark');
  for (var markIndex = 0; markIndex < contactResponsesMark.length; markIndex++) {
      var mark = contactResponsesMark[markIndex];
-     mark.addEventListener('click', function(){
-         this.classList.toggle('mark-unread')
-         this.classList.toggle('mark-read')
-     })
+     mark.addEventListener('click', function() {
+         this.classList.toggle('mark-unread');
+         this.classList.toggle('mark-read');
+     });
  }

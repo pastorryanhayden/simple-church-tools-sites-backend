@@ -5,6 +5,8 @@ $navigation-padding: 2rem;
 .navigation{
 	position: fixed;
 	overflow-y: scroll;
+	overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
 	width: $navigation-width;
 	padding: 0.5rem 0;
 	top: 0;

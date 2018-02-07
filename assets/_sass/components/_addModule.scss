@@ -16,6 +16,8 @@
 		width: 50%;
 		padding: 0 $wrapper-padding 2rem;
 		overflow-y: scroll;
+		overflow-scrolling: touch;
+		-webkit-overflow-scrolling: touch;
 		top: 0;
 		right: 0;
 		left: 100vw;

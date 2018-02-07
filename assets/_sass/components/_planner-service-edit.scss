@@ -31,6 +31,8 @@
 		width: 100%;
 		padding: 0 $wrapper-padding 2rem;
 		overflow-y: scroll;
+		overflow-scrolling: touch;
+		-webkit-overflow-scrolling: touch;
 		top: 0;
 		right: 0;
 		left: 100vw;
@@ -170,6 +172,8 @@
 					margin: 0;
 					// height: 50vh;
 					overflow-y: scroll;
+					overflow-scrolling: touch;
+					-webkit-overflow-scrolling: touch;
 					@include max-tablet{
 						padding: 0rem 2rem;
 					}
@@ -314,6 +318,8 @@
 					// max-height: 50vh;
 					height: calc(90vh - 20rem);
 					overflow-y: scroll;
+					overflow-scrolling: touch;
+					-webkit-overflow-scrolling: touch;
 				}
 				li.planner-edit-item{
 					font-size: 0.9rem;
@@ -394,6 +400,8 @@
 					padding: 0;
 					height: calc(90vh - 10rem);
 					overflow: scroll;
+					overflow-scrolling: touch;
+					-webkit-overflow-scrolling: touch;
 				}
 				li.planner-services-item{
 					margin: 0 0 0.5rem;

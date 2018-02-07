@@ -3,6 +3,8 @@
 	width: calc(90vw);
 	max-height: 90vh;
 	overflow-y: scroll;
+	overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
 	margin-left: calc( 5vw);
 	bottom: -100vh;
 
