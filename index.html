@@ -5,23 +5,61 @@ title: "Biblebaptistmattoon.org"
 header: simple
 ---
 <section class="statistics">
-	<article>
+	<article class="visitors">
 		<h2>Visitors this Month</h2>
-		<p>267</p>
+		<!-- Here should be a Google Analytics Chart instead of the image  -->
+		<img src="http://via.placeholder.com/470x280">
 	</article>
-	<article>
-		<h2>Visitors this Month</h2>
-		<p>267</p>
-	</article>
-	<article>
-		<h2>Visitors this Month</h2>
-		<p>267</p>
-	</article>
-	<article>
-		<h2>Visitors this Month</h2>
-		<p>267</p>
+	<article class="responses">
+		<h2>
+			Contact Responses
+			<input class="search"type="text" placeholder="Search">
+		</h2>
+		<div class="responses-container">
+			<table>
+				{% for response in (1..20) %}
+				<tr class="contactResponses-open">
+					<td>{% if forloop.index <= 4 %}<span class="mark-unread"></span>{% endif %}</td>
+					<td><a class="title" >Ryan Hayden</a></td>
+					<td>2018-02-07</td>
+					<td><a>ryan@rowandtable.com</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+		<div class="counter">
+			<p>Total: <strong>30</strong></p>
+			<p>Unread: <strong>4</strong></p>
+		</div>
 	</article>
 </section>
+
+<div id="popup-contactResponses" class="popup-contactResponses">
+	<div class="overlay"></div>
+	<section class="card">
+		<button class="close fa fa-times contactResponses-close"></button>
+		<header>
+			<button class="mark mark-read contactResponses-mark"></button>
+			<div>
+				<h2>
+					Ryan Hayden 
+					<span>2018-02-07</span>
+				</h2>
+				<a href="#">ryan@rowandtable.com</a>
+				<p>(877) 462-5160</p>
+			</div>
+		</header>
+		<div class="message">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, quam aspernatur unde necessitatibus debitis natus omnis voluptatem totam animi fugit suscipit repudiandae minus temporibus perferendis. Doloremque voluptatibus dolorum neque doloribus!</p>
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, quam aspernatur unde necessitatibus debitis natus omnis voluptatem totam animi fugit suscipit repudiandae minus temporibus perferendis. Doloremque voluptatibus dolorum neque doloribus!</p>
+		</div>
+		<div class="buttons">
+			<button class="button-orange">Delete</button>
+			<button>Replay <i class="fa fa-send"></i></button>
+		</div>
+	</section>
+</div>
+
 <section class="tasks">
 	<h2>Common Tasks:</h2>
 	<ul>
@@ -50,4 +88,9 @@ header: simple
 			</a>
 		</li>
 	</ul>
+</section>
+
+<section class="last-activity">
+	<p><strong>Last Sign In</strong>Ryan Hayden</p>
+	<p><strong>Last Updated</strong>10/17/2017</p>
 </section>

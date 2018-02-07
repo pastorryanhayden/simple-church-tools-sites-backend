@@ -13,40 +13,150 @@ body.dashboard{
 		justify-content: space-between;
 		flex-wrap: wrap;
 		article{
-			width: calc(25% - 1rem);
+			width: calc(50% - 1rem);
 			border-radius: 5px;
 			background: $white;
 			margin: 0 0 1rem;
-			padding: 2rem 2rem;
-			text-align: center;
-			@media only screen and (max-width: 950px){
-				width: calc(50% - 1rem);
-				padding: 1rem 2rem;
-			}
-			@media only screen and (max-width: 500px){
+			text-align: left;
+			position: relative;
+			@media only screen and (max-width: 1050px){
 				width: 100%;
-				padding: 0.5rem 2rem;
+				// padding: 0.5rem 2rem;
 			}
 			h2{
-				margin: 0.5em 0;
+				margin: 0;
+				padding: 0.5em 1.75rem;
 				font-size: 1.4rem;
+				border-bottom: 1px solid $gray;
 			}
 			p{
-				font-size: 1.3rem;
+				font-size: 1rem;
+			}
+		}
+		.visitors{
+			img,
+			iframe{
+				width: 100%;
+				height: auto;
+			}
+		}
+		.responses{
+			h2{
+				.search{
+					float: right;
+					width: 40%;
+					font-weight: 400;
+					padding: 0.25rem .5rem;
+					border: 1px solid rgba($dark, 0.1);
+					@media only screen and (max-width: 500px){
+						width: 100%;
+						float: none;
+						margin-top: 0.75rem;
+						margin-bottom: 0.25rem;
+					}
+				}
+			}
+			table{
+				width: 100%;
+				min-width: 400px;
+				max-width: unset;
+				font-size: 0.94em;
+			}
+			tr{
+				border-radius: 5px;
+				overflow: hidden;
+				cursor: pointer;
+				&:hover{
+					background: rgba($dark, 0.07);
+					td:first-of-type{
+						border-top-left-radius: 5px;
+						border-bottom-left-radius: 5px;
+					}
+					td:last-of-type{
+						border-top-right-radius: 5px;
+						border-bottom-right-radius: 5px;
+					}
+				}
+			}
+			td{
+				padding: 0.3em 0.25em;
+				color: $dark;
+				&:first-of-type{
+					padding-left: 0.5em;
+				}
+			}
+			.title{
+				font-size: 1.076923077em;
+				font-weight: 700;
+				color: $dark;
+			}
+			a{
+				text-decoration: none;
+			}
+		}
+		.responses-container{
+			position: relative;
+			height: 300px;
+			margin: 0 1.75rem;
+			padding: 0.5rem 0;
+			overflow-y: auto;
+			overflow-x: auto;
+			overflow-scrolling: touch;
+			-webkit-overflow-scrolling: touch;
+		}
+		@media only screen and (max-width: 600px){
+			.responses{
+				table{
+					min-width: unset;
+				}
+				td:last-of-type{
+					display: none;
+				}
+			}
+			.responses-container{
+				overflow-x: initial;
+			}
+		}
+		.counter{
+			text-align: center;
+			p{
+				display: inline-block;
+				margin: 1rem 3rem;
 			}
 		}
 	}//section.statistics
+	.mark-unread{
+		display: inline-block;
+		height: 0.615384615em;
+		width: 0.615384615em;
+		border-radius: 50%;
+		padding: 0;
+		background: linear-gradient(145.01deg, rgba(5, 119, 255, 0.5) 9.36%, rgba(54, 120, 255, 0.5) 89.04%);
+	}
+	.mark-read{
+		display: inline-block;
+		height: 0.615384615em !important;
+		width: 0.615384615em !important;
+		border-radius: 50%;
+		padding: 0;
+		background-color: transparent;
+		border: 2px solid rgba($blue, 0.5);
+	}
 	section.tasks{
 		@extend .card;
+		margin-top: 1rem;
+		padding: 0;
 		h2{
 			font-size: 1.5rem;
 			margin: 0;
+			padding: 0.75rem 2rem;
+			border-bottom: 1px solid $gray;
 		}
 		ul{
 			display: flex;
 			flex-wrap: wrap;
 			list-style: none;
-			padding: 0;
+			padding: 0 2rem;
 			justify-content: space-between;
 		}
 		li{
@@ -75,4 +185,73 @@ body.dashboard{
 			margin: 0 auto 1rem;
 		}
 	}//section.help
+	section.last-activity{
+		text-align: center;
+		margin: 3rem 0;
+		p{
+			display: inline-block;
+			margin: 0 1.5rem;
+			opacity: 0.7;
+			line-height: 1.75em;
+			strong{
+				display: block;
+			}
+		}
+	}
+	.popup-contactResponses{
+		@extend %popup-message;
+		button.close{
+			position: absolute;
+			top: 1rem;
+			right: 2rem;
+			padding: 0.25em;
+			background-color: transparent;
+			font-size: 1.5rem;
+			color: $dark;
+		}
+		header{
+			.mark{
+				display: inline-block;
+				vertical-align: top;
+				font-size: 1.5rem;
+				margin-top: 0.25em;
+			}
+			>div{
+				display: inline-block;
+				vertical-align: top;
+				padding-left: 1rem;
+				p,
+				a{
+					margin: 0;
+					line-height: 1.5em;
+					text-decoration: none;
+				}
+			}
+			h2{
+				margin: 0 0 0.5rem;
+				text-align: left;
+				span{
+					display: block;
+					font-size: 0.8em;
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}//header
+		.message{
+			padding: 1rem 0;
+			p{
+				line-height: 1.5em;
+			}
+		}
+		.buttons{
+			text-align: center;
+			button{
+				min-width: 15em;
+				max-width: 100%;
+				margin-left: 0.25em;
+				margin-right: 0.25em;
+			}
+		}
+	}//.popup-contactResponses
 }//body.dashboard
