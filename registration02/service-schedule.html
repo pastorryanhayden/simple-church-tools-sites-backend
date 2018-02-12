@@ -1,0 +1,50 @@
+---
+layout: registration
+body-class: 
+title: "Registration"
+step: 3
+---
+
+<div class="card">
+	<h3>Service Schedule</h3>
+	<form action="#">
+		
+		<div class="field-container">
+			<div class="label settings-serviceTime">
+				<label for="">Service Times</label>
+				<fieldset>
+					<input type="text" placeholder="Day of the week">
+					<input type="text" placeholder="Name">
+					<input type="text" placeholder="Time">
+					<button class="button-addService" title="Add Service Times">
+						<span class="mobile">
+							Add Service Times
+						</span>
+						<i class="fa fa-plus"></i>
+					</button>
+				</fieldset>
+				<ul>
+					{% for service in (1..4) %}
+					<li>
+						<p>Sunday - Sunday School - 9:30am</p>
+						<button class="button-removeService" title="Remove Service Times">
+							<i class="fa fa-times"></i>
+						</button>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="notes">
+				<strong>What’s this?</strong>
+				<p>Enter your service times here.  We will display this prominently on several parts of your website.</p>
+				<p>Example: <br> Sunday - Sunday School - 9:30AM</p>
+			</div>
+		</div>
+	
+	</form>
+</div>
+
+<div class="buttons">
+	<a href="/registration02/church-info.html#step2" class="button-orange">PREVIOUS</a>
+	<a href="/registration02/design.html#step4" class="button-green">NEXT</a>
+</div>

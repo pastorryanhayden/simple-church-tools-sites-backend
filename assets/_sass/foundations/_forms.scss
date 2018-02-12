@@ -96,16 +96,16 @@ a.button,
 }
 .button-orange{
   @extend .button;
-  background-color: $orange;
+  background-color: $orange !important;
   &:hover{
-    background-color: darken($orange, 5);
+    background-color: darken($orange, 5) !important;
   }
 }
 .button-green{
   @extend .button;
-  background-color: $green;
+  background-color: $green !important;
   &:hover{
-    background-color: darken($green, 5);
+    background-color: darken($green, 5) !important;
   }
 }
 .button-gray{

@@ -1,0 +1,201 @@
+.registration-layout{
+	.page-content{
+		margin: 0 auto;
+		max-width: 999px;
+		width: 100% !important;
+	}
+	.card{
+		padding: 0 0 1rem;
+		h3{
+			border-bottom: 1px solid $gray;
+			margin: 0 0 1.75rem;
+			padding: 1em 2rem;
+		}
+		form,
+		.form{
+			padding: 0 2rem;
+		}
+		.field-container{
+			display: flex;
+			flex-wrap: wrap;
+			> label,
+			> .label{
+				width: calc(65% - 2rem);
+				margin-top: 0;
+				margin-right: 2rem;
+				margin-bottom: 1.4em;
+				color: $dark;
+				font-weight: 600;
+				label,
+				.label{
+					margin: 0.5em 0 0 1em;
+				}
+			}
+			.notes{
+				width: calc(35% - 2rem);
+				opacity: 0.8;
+				strong{
+					display: block;
+					color: $dark;
+					line-height: 1em;
+				}
+			}
+		}//.field-container
+	}//.card{
+	input,
+	textarea{
+		margin-top: 0.25em;
+		font-weight: 400;
+		&[type="radio"]{
+			margin-right: 0.5em;
+		}
+	}
+	textarea{
+		min-height: 7em;
+	}
+	.buttons{
+		text-align: center;
+		margin: 2rem 0;
+		button,
+		.button{
+			min-width: 10em;
+		}
+	}
+	.settings-serviceTime{
+		label{
+			padding-bottom: 1em;
+		}
+		ul{
+			font-weight: 400;
+			p{
+				margin: 0.75em 0;
+			}
+		}
+	}
+	.form-themes{
+		label{
+			font-size: 0.8em;
+			margin-left: 0 !important;
+			margin-right: 0.75em !important;
+		}
+	}//.form-themes
+	.form-theme-fonts{
+		label{
+			font-size: 0.9em;
+			width: calc(33.33% - 1.5em);
+			margin-left: 0 !important;
+			margin-right: 0.75em !important;
+		}
+	}
+	.form-color-scheme{
+		label{
+			font-size: 0.9em;
+			width: 46%;
+			margin-left: 0 !important;
+			margin-right: 0.75em !important;
+		}
+	}
+	@media only screen and (max-width: 800px){
+		.form-theme-fonts{
+			label{
+				width: calc(50% - 1.5em);
+			}
+		}
+	}
+	@include max-mobile{
+		.field-container{
+			> label,
+			> .label{
+				width: 100% !important;
+				margin-right: 0 !important;
+			}
+			.notes{
+				width: 100% !important;
+				padding: 0 2em;
+				font-size: 0.9em;
+			}
+		}
+		.form-theme-fonts{
+			label{
+				&:first-of-type{
+					margin-left: 0;
+				}
+				width: 100%;
+			}
+		}
+		.form-color-scheme{
+			label{
+				font-size: 0.9em;
+				width: 100%;
+			}
+		}
+	}
+	a.logo{
+		display: block;
+		margin: 3rem auto;
+		width: 90%;
+		max-width: 400px;
+		img{
+			width: 100%;
+		}
+	}
+	.card-success{
+		max-width: 500px;
+		margin: 0 auto;
+		padding: 3rem 2rem;
+		text-align: center;
+		h1{
+			margin: 0;
+		}
+		h2{
+			font-size: 1.25em;
+			margin: 0.25em 0;
+			font-weight: 400;
+			font-style: italic;
+		}
+		i{
+			font-size: 3.5em;
+			margin: 1.25rem 0;
+			color: $green;
+		}
+		input{
+			margin: 2rem 0;
+			text-align: center;
+		}
+	}
+	.card-tutorial{
+		max-width: 400px;
+		margin: 2rem auto 0 ;
+		padding-bottom: 2rem;
+		h2{
+			border-bottom: 1px solid $gray;
+			margin: 0 0 1.75rem;
+			padding: 1em 2rem;
+			font-size: 1.17em;
+		}
+		.container{
+			padding: 0 2rem;
+		}
+		iframe{
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+}//.registration-layout
+
+.header-registration{
+	text-align: center;
+	h1{
+		font-size: 2em;
+		margin: 1.25em 0 0;
+	}
+	h2{
+		margin: 0.25em 0 2em;
+		font-size: 1.25em;
+		font-style: italic;
+		font-weight: 400;
+	}
+	.steps-list a{
+		cursor: default;
+	}
+}

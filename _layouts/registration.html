@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+  <body class="registration-layout {{page.body-class}}">
+    <main class="page-content" aria-label="Content" id="main-content">
+      <div class="wrapper">
+        {% if page.header != false %}
+          {% include header-registration.html %}
+        {% endif %}
+        {{ content }}
+      </div>
+    </main>
+  </body>
+</html>

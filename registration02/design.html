@@ -1,0 +1,104 @@
+---
+layout: registration
+body-class: 
+title: "Registration"
+step: 4
+---
+
+<div class="card">
+	<h3>Design</h3>
+	<form action="#">
+		
+		<div class="field-container">
+			<div class="label form-themes">
+				<p>Theme</p>
+				<label>
+					<input type="radio" name="theme" checked>
+					<span>
+						<figure style="background-image: url(/assets/images/templates-previews/salem.jpg)">
+							<div class="overlay"></div>
+						</figure>
+						<p>Salem</p>
+					</span>
+				</label>
+				<label>
+					<input type="radio" name="theme">
+					<span>
+						<figure style="background-image: url(/assets/images/templates-previews/phoenix.jpg)">
+							<div class="overlay"></div>
+						</figure>
+						<p>Phoenix</p>
+					</span>
+				</label>
+			</div>
+			<div class="notes">
+				<strong>What’s this?</strong>
+				<p>Choose your theme, fonts and color scheme for the website.  You can change this as many times as you want later, and any new themes will be available to you as well.</p>
+			</div>
+		</div>
+		
+		<div class="field-container">
+			<div class="label form-theme-fonts">
+				<p>Theme Fonts</p>
+				<label >
+					<input type="radio" name="theme-fonts">
+					<span>
+						<p class="heading"style="">Heading</p>
+						<p>Body font</p>
+					</span>
+				</label>
+				<label >
+					<input type="radio" name="theme-fonts">
+					<span>
+						<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+						<p class="heading"style="font-family: 'Slabo 27px', serif;">Heading</p>
+						<p>Body font</p>
+					</span>
+				</label>
+				<label >
+					<input type="radio" name="theme-fonts">
+					<span>
+						<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700" rel="stylesheet">
+						<p class="heading"style="font-family: 'Libre Baskerville',serif;">Heading</p>
+						<p>Body font</p>
+					</span>
+				</label>
+			</div>
+			<div class="notes">
+				<strong>Email Address</strong>
+				<p>What email address do you want publicly displayed for your church?</p>
+			</div>
+		</div>
+		
+		<div class="field-container">
+			<div class="label form-color-scheme">
+				<p>Color scheme</p>
+				{% for item in (1..4) %}
+				<label >
+					<input type="radio" name="color-scheme">
+					<span>
+						Awesome name
+						<ul>
+							<li style="background-color: #27231F"></li>
+							<li style="background-color: #142735"></li>
+							<li style="background-color: #972C2A"></li>
+							<li style="background-color: #FFFFFf"></li>
+							<li style="background-color: #004E23"></li>
+						</ul>
+					</span>
+				</label>
+				{% endfor %}
+			</div>
+			<div class="notes">
+				<strong>Email Address</strong>
+				<p>What email address do you want publicly displayed for your church?</p>
+			</div>
+		</div>
+	
+	</form>
+</div>
+
+<div class="buttons">
+	<a href="/registration02/service-schedule.html#step3" class="button-orange">PREVIOUS</a>
+	<a href="/registration02/success.html" class="button-green">NEXT</a>
+</div>

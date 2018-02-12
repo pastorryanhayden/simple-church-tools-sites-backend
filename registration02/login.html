@@ -1,0 +1,80 @@
+---
+layout: registration
+body-class: 
+title: "Registration"
+step: 1
+---
+
+<div class="card">
+	<h3>Login Information</h3>
+	<form action="#">
+		
+		<div class="field-container">
+			<label>
+				Church name
+				<input type="text">
+			</label>
+		</div>
+		
+		<div class="field-container">
+			<label>
+				Church Slug
+				<input type="text">
+			</label>
+			<div class="notes">
+				<strong>What’s a church slug?</strong>
+				<p>This is a unique key for your church that is a part of some of our URLs. It can’t have spaces and can’t be the same as another church.  We will try to auto generate it, but you may have to change it slightly to avoid conflicts with other churches.</p>
+			</div>
+		</div>
+		
+		<div class="field-container">
+			<label>
+				Your name
+				<input type="text">
+			</label>
+		</div>
+		
+		<div class="field-container">
+			<label>
+				Your email
+				<input type="email">
+			</label>
+		</div>
+
+		<div class="field-container">
+			<label>
+				Password
+				<input type="password">
+			</label>
+		</div>
+		
+		<div class="field-container">
+			<label>
+				Confirm Password
+				<input type="password">
+			</label>
+		</div>
+		
+		<div class="field-container">
+			<div class="label">
+				Select Payment Type
+				<label>
+					<input type="radio" name="paymentType">
+					Monthly
+				</label>
+				<label>
+					<input type="radio" name="paymentType">
+					Yearly
+				</label>
+			</div>
+			<div class="notes">
+				<strong>How does billing work?</strong>
+				<p>When you sign up, we will send you an invoice via email.  You can pay for this with a credit card or with via check.  You can setup the site and use one of our domains right away, but you won’t be able to use a private domain (i.e. yourchurch.org) until this is paid.</p>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="buttons">
+	<a href="/registration02/church-info.html#step2" class="button button-green">NEXT</a>
+</div>
