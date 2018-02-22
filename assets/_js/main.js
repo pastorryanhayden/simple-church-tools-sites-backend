@@ -269,3 +269,16 @@ var contactResponsesMark = document
          this.classList.toggle('mark-read');
      });
  }
+
+// Trial Remainder
+// ==================
+var trialRemainder = document.getElementById('trial-remainder');
+var trialRemainderClose = document.getElementById('trial-remainder-close');
+
+
+if (trialRemainder) {
+    trialRemainder.classList.add('active');
+    trialRemainderClose.addEventListener('click', function() {
+        trialRemainder.classList.remove('active');
+    });
+}
